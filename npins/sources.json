@@ -1,0 +1,92 @@
+{
+  "pins": {
+    "Adwaita": {
+      "type": "GitRelease",
+      "repository": {
+        "type": "GitHub",
+        "owner": "tkashkin",
+        "repo": "Adwaita-for-Steam"
+      },
+      "pre_releases": false,
+      "version_upper_bound": null,
+      "release_prefix": null,
+      "submodules": false,
+      "version": "3.17",
+      "revision": "bb356224997c023e680f9f692dc15d14154e64f6",
+      "url": "https://api.github.com/repos/tkashkin/Adwaita-for-Steam/tarball/refs/tags/3.17",
+      "hash": "sha256-Xj8/tG/uIZZUGYv+zGxxuSlyLE7PkHo/amXy7I3jwrA="
+    },
+    "Extendium": {
+      "type": "GitRelease",
+      "repository": {
+        "type": "GitHub",
+        "owner": "BossSloth",
+        "repo": "Extendium"
+      },
+      "pre_releases": false,
+      "version_upper_bound": null,
+      "release_prefix": null,
+      "submodules": false,
+      "version": "v2.0.3",
+      "revision": "0f6b01650d953251a2bdc1ec4b98a20f295cc727",
+      "url": "https://api.github.com/repos/BossSloth/Extendium/tarball/refs/tags/v2.0.3",
+      "hash": "sha256-pseB3xD30abv9w0iukRJU653WL1kzzjli/jJmNCHG3s="
+    },
+    "Material-Theme": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "kuska1",
+        "repo": "Material-Theme"
+      },
+      "branch": "main",
+      "submodules": false,
+      "revision": "65348b1f49863b178c618487aad1dd74a991ce04",
+      "url": "https://github.com/kuska1/Material-Theme/archive/65348b1f49863b178c618487aad1dd74a991ce04.tar.gz",
+      "hash": "sha256-Tg/apkjgq7+sppATxVBPFZPZPhKlxsUY5s262eWR0M4="
+    },
+    "MetroSteam": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "RoseTheFlower",
+        "repo": "MetroSteam"
+      },
+      "branch": "master",
+      "submodules": false,
+      "revision": "8741bfc4b18c3d856c27d69e95d1e45811305dd8",
+      "url": "https://github.com/RoseTheFlower/MetroSteam/archive/8741bfc4b18c3d856c27d69e95d1e45811305dd8.tar.gz",
+      "hash": "sha256-hHJKmFLx29E2LTA/VbcxN/C0mzQE0zjPtETclQk2spw="
+    },
+    "Minimal-Dark": {
+      "type": "GitRelease",
+      "repository": {
+        "type": "GitHub",
+        "owner": "SaiyajinK",
+        "repo": "Minimal-Dark-for-Steam"
+      },
+      "pre_releases": false,
+      "version_upper_bound": null,
+      "release_prefix": null,
+      "submodules": false,
+      "version": "5.3.2",
+      "revision": "02a7be8d61fb6037464ba4e6af8b31a978ca5a7c",
+      "url": "https://api.github.com/repos/SaiyajinK/Minimal-Dark-for-Steam/tarball/refs/tags/5.3.2",
+      "hash": "sha256-4V/zMA2K9ch7d2OwuAAQA9fgjRm8G3GLCaRSEMrdHT8="
+    },
+    "SpaceTheme": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "SpaceTheme",
+        "repo": "Steam"
+      },
+      "branch": "main",
+      "submodules": false,
+      "revision": "28dd6a1fe837b08e8b6af8f93f208b98a65f0dcc",
+      "url": "https://github.com/SpaceTheme/Steam/archive/28dd6a1fe837b08e8b6af8f93f208b98a65f0dcc.tar.gz",
+      "hash": "sha256-tXsDZ0WQg2MRzi9tATrcDXrrBNP5RV/ktlG4Ju01aic="
+    }
+  },
+  "version": 7
+}

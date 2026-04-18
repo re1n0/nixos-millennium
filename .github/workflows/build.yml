@@ -1,0 +1,63 @@
+name: Deploy All
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Install Nix
+        uses: cachix/install-nix-action@v31
+        with:
+          extra_nix_config: |
+            experimental-features = nix-command flakes
+          github_access_token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Setup Cachix
+        uses: cachix/cachix-action@v17
+        with:
+          name: nixos-millennium
+          authToken: ${{ secrets.CACHIX_AUTH_TOKEN }}
+          useDaemon: true
+
+      - name: Build all packages
+        run: |
+          set -eo pipefail
+          SYSTEM="x86_64-linux"
+
+          PKGS=$(nix eval .#legacyPackages."$SYSTEM" --json --apply '
+            let
+              lib = import <nixpkgs> { };
+              findPaths = prefix: set:
+                builtins.concatLists (builtins.map (name:
+                  let
+                    path = if prefix == "" then name else "${prefix}.${name}";
+                    value = set.${name};
+                  in
+                  if builtins.isAttrs value && value ? type && value.type == "derivation" then
+                    [ path ]
+                  else if builtins.isAttrs value && !(value ? type) then
+                    findPaths path value
+                  else
+                    []
+                ) (builtins.attrNames set));
+            in
+            findPaths ""' | jq -r '.[]')
+
+          if [ -z "$PKGS" ]; then
+            echo "No packages found."
+            exit 0
+          fi
+
+          for pkg in $PKGS; do
+            echo "Building .#$pkg..."
+            nix build --no-link ".#$pkg"
+          done
+        env:
+          NIX_REMOTE: "daemon"
