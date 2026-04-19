@@ -112,6 +112,7 @@ in
     {
       xdg.configFile."millennium/config.json" = lib.mkIf (cfg.config != { }) {
         source = jsonFormat.generate "config.json" cfg.config;
+        force = true;
       };
     }
   ];

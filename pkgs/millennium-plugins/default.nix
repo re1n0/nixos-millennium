@@ -16,8 +16,10 @@ let
 
   inherit (pins)
     Extendium
+    HLTB
     ;
 in
 {
   extendium = mkPlugin "extendium" Extendium.version Extendium;
+  hltb = mkPlugin "hltb-for-millennium" HLTB.version HLTB;
 }
