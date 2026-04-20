@@ -32,6 +32,22 @@
       "url": "https://api.github.com/repos/BossSloth/Extendium/tarball/refs/tags/v2.0.3",
       "hash": "sha256-pseB3xD30abv9w0iukRJU653WL1kzzjli/jJmNCHG3s="
     },
+    "HLTB": {
+      "type": "GitRelease",
+      "repository": {
+        "type": "GitHub",
+        "owner": "jcdoll",
+        "repo": "hltb-millennium-plugin"
+      },
+      "pre_releases": false,
+      "version_upper_bound": null,
+      "release_prefix": null,
+      "submodules": false,
+      "version": "v2.0.3",
+      "revision": "cfb2398b6522ce8da45ae96b0647e220b588a6c9",
+      "url": "https://api.github.com/repos/jcdoll/hltb-millennium-plugin/tarball/refs/tags/v2.0.3",
+      "hash": "sha256-gDYRwjigGajWOgAzU3xA/kFKgWOawD6hjUw6SzvhjhA="
+    },
     "Material-Theme": {
       "type": "Git",
       "repository": {
@@ -83,25 +99,9 @@
       },
       "branch": "main",
       "submodules": false,
-      "revision": "28dd6a1fe837b08e8b6af8f93f208b98a65f0dcc",
-      "url": "https://github.com/SpaceTheme/Steam/archive/28dd6a1fe837b08e8b6af8f93f208b98a65f0dcc.tar.gz",
-      "hash": "sha256-tXsDZ0WQg2MRzi9tATrcDXrrBNP5RV/ktlG4Ju01aic="
-    },
-    "HLTB": {
-      "type": "GitRelease",
-      "repository": {
-        "type": "GitHub",
-        "owner": "jcdoll",
-        "repo": "hltb-millennium-plugin"
-      },
-      "pre_releases": false,
-      "version_upper_bound": null,
-      "release_prefix": null,
-      "submodules": false,
-      "version": "v2.0.3",
-      "revision": "cfb2398b6522ce8da45ae96b0647e220b588a6c9",
-      "url": "https://api.github.com/repos/jcdoll/hltb-millennium-plugin/tarball/refs/tags/v2.0.3",
-      "hash": "sha256-gDYRwjigGajWOgAzU3xA/kFKgWOawD6hjUw6SzvhjhA="
+      "revision": "2b22877067c48b5b35e5d02935a25c1c241bb208",
+      "url": "https://github.com/SpaceTheme/Steam/archive/2b22877067c48b5b35e5d02935a25c1c241bb208.tar.gz",
+      "hash": "sha256-tNTcCGDjpTYzDnhKnmTpTOJHAxWxzJ95F0WIg8KdQLU="
     }
   },
   "version": 7
