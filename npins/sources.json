@@ -57,9 +57,9 @@
       },
       "branch": "main",
       "submodules": false,
-      "revision": "65348b1f49863b178c618487aad1dd74a991ce04",
-      "url": "https://github.com/kuska1/Material-Theme/archive/65348b1f49863b178c618487aad1dd74a991ce04.tar.gz",
-      "hash": "sha256-Tg/apkjgq7+sppATxVBPFZPZPhKlxsUY5s262eWR0M4="
+      "revision": "380cb27e358ff56e1a4ac4ca020678f3a4d2f188",
+      "url": "https://github.com/kuska1/Material-Theme/archive/380cb27e358ff56e1a4ac4ca020678f3a4d2f188.tar.gz",
+      "hash": "sha256-AZx1GUivqL4DKfkiHh848dUXCUcp9aJEEaMi8tlrpGY="
     },
     "MetroSteam": {
       "type": "Git",
@@ -99,9 +99,9 @@
       },
       "branch": "main",
       "submodules": false,
-      "revision": "2b22877067c48b5b35e5d02935a25c1c241bb208",
-      "url": "https://github.com/SpaceTheme/Steam/archive/2b22877067c48b5b35e5d02935a25c1c241bb208.tar.gz",
-      "hash": "sha256-tNTcCGDjpTYzDnhKnmTpTOJHAxWxzJ95F0WIg8KdQLU="
+      "revision": "afeee3a0e5ca33dc14ab1d4b3cef7eba209ad796",
+      "url": "https://github.com/SpaceTheme/Steam/archive/afeee3a0e5ca33dc14ab1d4b3cef7eba209ad796.tar.gz",
+      "hash": "sha256-dxII4Xfx3g2lgfVQcOkysDrccnOp99oDvVxHbPoekqY="
     }
   },
   "version": 7
