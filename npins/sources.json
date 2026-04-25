@@ -57,9 +57,9 @@
       },
       "branch": "main",
       "submodules": false,
-      "revision": "380cb27e358ff56e1a4ac4ca020678f3a4d2f188",
-      "url": "https://github.com/kuska1/Material-Theme/archive/380cb27e358ff56e1a4ac4ca020678f3a4d2f188.tar.gz",
-      "hash": "sha256-AZx1GUivqL4DKfkiHh848dUXCUcp9aJEEaMi8tlrpGY="
+      "revision": "6c24d944fd625422e2737e29e06179fb3598d692",
+      "url": "https://github.com/kuska1/Material-Theme/archive/6c24d944fd625422e2737e29e06179fb3598d692.tar.gz",
+      "hash": "sha256-Qj8UJOJ9Tk7frIVbmmCAxcXBZJceFnQO4sQevuSIu3M="
     },
     "MetroSteam": {
       "type": "Git",
