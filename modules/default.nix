@@ -2,7 +2,6 @@
   lib,
   pkgs,
   self,
-  inputs,
   ...
 }:
 {
@@ -17,7 +16,6 @@
 
     nixpkgs.overlays = [
       self.overlays.default
-      inputs.millennium.overlays.default
     ];
 
     nix.settings.trusted-public-keys = [

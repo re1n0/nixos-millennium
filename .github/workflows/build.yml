@@ -34,33 +34,44 @@ jobs:
           set -eo pipefail
           SYSTEM="x86_64-linux"
 
-          PKGS=$(nix eval .#legacyPackages."$SYSTEM" --json --apply '
-            let
-              lib = import <nixpkgs> { };
-              findPaths = prefix: set:
-                builtins.concatLists (builtins.map (name:
-                  let
-                    path = if prefix == "" then name else "${prefix}.${name}";
-                    value = set.${name};
-                  in
-                  if builtins.isAttrs value && value ? type && value.type == "derivation" then
-                    [ path ]
-                  else if builtins.isAttrs value && !(value ? type) then
-                    findPaths path value
-                  else
-                    []
-                ) (builtins.attrNames set));
-            in
-            findPaths ""' | jq -r '.[]')
+          find_pkgs() {
+            local attr="$1"
+            nix eval ".#${attr}.\"$SYSTEM\"" --json --apply '
+              let
+                findPaths = prefix: set:
+                  builtins.concatLists (builtins.map (name:
+                    let
+                      path = if prefix == "" then name else "${prefix}.${name}";
+                      value = set.${name};
+                    in
+                    if builtins.isAttrs value && value ? type && value.type == "derivation" then
+                      [ { pkg = path; src = "'${attr}'"; } ]
+                    else if builtins.isAttrs value && !(value ? type) then
+                      findPaths path value
+                    else
+                      []
+                  ) (builtins.attrNames set));
+              in
+              findPaths ""' 2>/dev/null || echo "[]"
+          }
 
-          if [ -z "$PKGS" ]; then
+          LEGACY_PKGS=$(find_pkgs "legacyPackages")
+          PACKAGES=$(find_pkgs "packages")
+
+          ALL_PKGS=$(jq -r --argjson a "$LEGACY_PKGS" --argjson b "$PACKAGES" \
+            '($a + $b) | unique_by(.pkg) | .[] | "\(.src).\(.pkg)"' <<< "null")
+
+          if [ -z "$ALL_PKGS" ]; then
             echo "No packages found."
             exit 0
           fi
 
-          for pkg in $PKGS; do
-            echo "Building .#$pkg..."
-            nix build --no-link ".#$pkg"
-          done
+          while IFS= read -r entry; do
+            src="${entry%%.*}"            
+            pkg="${entry#*.}"             
+            full=".#${src}.\"${SYSTEM}\".${pkg}"
+            echo "Building ${full}..."
+            nix build --no-link "$full"
+          done <<< "$ALL_PKGS"
         env:
           NIX_REMOTE: "daemon"

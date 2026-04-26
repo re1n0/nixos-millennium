@@ -26,13 +26,15 @@ in
         ];
       };
 
-      overlayAttrs = config.legacyPackages;
+      overlayAttrs = config.packages // config.legacyPackages;
 
       legacyPackages = {
         millenniumThemes = pkgs.callPackage ./millennium-themes { inherit pins; };
         millenniumPlugins = pkgs.callPackage ./millennium-plugins { inherit pins; };
-
-        close-steam-session = pkgs.callPackage ./close-steam-session { };
       };
+
+      packages = {
+        close-steam-session = pkgs.callPackage ./close-steam-session { };
+      } // (inputs.millennium.packages.${system} or {});
     };
 }
