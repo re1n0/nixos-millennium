@@ -19,6 +19,7 @@ let
     Gratitude
     HLTB
     non-steam-playtimes
+    browser-history
     ;
 in
 {
@@ -28,4 +29,5 @@ in
   non-steam-playtimes =
     mkPlugin "non-steam-playtimes" "0-git+${non-steam-playtimes.revision}"
       non-steam-playtimes;
+  browser-history = mkPlugin "browser-history" "0-git+${browser-history.revision}" browser-history;
 }

@@ -147,6 +147,19 @@
       "revision": "3d276fba62ec4920e03b344eb045e4b186944e54",
       "url": "https://github.com/k0d13/steam-non-steam-playtimes/archive/3d276fba62ec4920e03b344eb045e4b186944e54.tar.gz",
       "hash": "sha256-XAcN0IaeBbjaIoJKO0in8MN81+zTXpCUhjEsky8pzXg="
+    },
+    "browser-history": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "ricewind012",
+        "repo": "steam-browser-history"
+      },
+      "branch": "master",
+      "submodules": false,
+      "revision": "e6ec2ab37a63c7ec245b7d893f7cf94a07fb45c3",
+      "url": "https://github.com/ricewind012/steam-browser-history/archive/e6ec2ab37a63c7ec245b7d893f7cf94a07fb45c3.tar.gz",
+      "hash": "sha256-Ed/I5vOYsZJWvvNyD0+5oZAYuqZvaP/6owrp3kLrh+8="
     }
   },
   "version": 7
