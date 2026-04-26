@@ -48,6 +48,22 @@
       "url": "https://api.github.com/repos/BossSloth/Extendium/tarball/refs/tags/v2.0.3",
       "hash": "sha256-pseB3xD30abv9w0iukRJU653WL1kzzjli/jJmNCHG3s="
     },
+    "Gratitude": {
+      "type": "GitRelease",
+      "repository": {
+        "type": "GitHub",
+        "owner": "BlythT",
+        "repo": "Gratitude-Millennium-Plugin"
+      },
+      "pre_releases": false,
+      "version_upper_bound": null,
+      "release_prefix": null,
+      "submodules": false,
+      "version": "v1.1.2",
+      "revision": "1e411be78298977437bf53b40435b7de88a97838",
+      "url": "https://api.github.com/repos/BlythT/Gratitude-Millennium-Plugin/tarball/refs/tags/v1.1.2",
+      "hash": "sha256-Q+32LrlzRZm/RCMfFGfwbJlP065qWPRGKgkXDmzQQSo="
+    },
     "HLTB": {
       "type": "GitRelease",
       "repository": {

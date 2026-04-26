@@ -16,12 +16,14 @@ let
 
   inherit (pins)
     Extendium
+    Gratitude
     HLTB
     non-steam-playtimes
     ;
 in
 {
   extendium = mkPlugin "extendium" Extendium.version Extendium;
+  gratitude = mkPlugin "gratitude" Gratitude.version Gratitude;
   hltb = mkPlugin "hltb-for-millennium" HLTB.version HLTB;
   non-steam-playtimes =
     mkPlugin "non-steam-playtimes" "0-git+${non-steam-playtimes.revision}"
