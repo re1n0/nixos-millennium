@@ -118,6 +118,19 @@
       "revision": "afeee3a0e5ca33dc14ab1d4b3cef7eba209ad796",
       "url": "https://github.com/SpaceTheme/Steam/archive/afeee3a0e5ca33dc14ab1d4b3cef7eba209ad796.tar.gz",
       "hash": "sha256-dxII4Xfx3g2lgfVQcOkysDrccnOp99oDvVxHbPoekqY="
+    },
+    "non-steam-playtimes": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "k0d13",
+        "repo": "steam-non-steam-playtimes"
+      },
+      "branch": "main",
+      "submodules": false,
+      "revision": "3d276fba62ec4920e03b344eb045e4b186944e54",
+      "url": "https://github.com/k0d13/steam-non-steam-playtimes/archive/3d276fba62ec4920e03b344eb045e4b186944e54.tar.gz",
+      "hash": "sha256-XAcN0IaeBbjaIoJKO0in8MN81+zTXpCUhjEsky8pzXg="
     }
   },
   "version": 7
