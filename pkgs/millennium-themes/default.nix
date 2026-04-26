@@ -15,6 +15,7 @@ let
 
   inherit (pins)
     Adwaita
+    ATOMS
     Material-Theme
     MetroSteam
     Minimal-Dark
@@ -23,6 +24,7 @@ let
 in
 {
   adwaita = mkTheme "adwaita" Adwaita.version Adwaita;
+  atoms = mkTheme "atoms" ATOMS.version ATOMS;
   material-theme = mkTheme "material-theme" "0-git+${Material-Theme.revision}" Material-Theme;
   metro = mkTheme "metro" "0-git+${MetroSteam.revision}" MetroSteam;
   minimal-dark = mkTheme "minimal-dark" Minimal-Dark.version Minimal-Dark;

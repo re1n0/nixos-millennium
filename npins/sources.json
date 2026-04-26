@@ -1,5 +1,21 @@
 {
   "pins": {
+    "ATOMS": {
+      "type": "GitRelease",
+      "repository": {
+        "type": "GitHub",
+        "owner": "Plaer1",
+        "repo": "ATOMS"
+      },
+      "pre_releases": false,
+      "version_upper_bound": null,
+      "release_prefix": null,
+      "submodules": false,
+      "version": "v1.1.1.1.1.1",
+      "revision": "27fe1636ac757b046234546db7b1b18e33d43c75",
+      "url": "https://api.github.com/repos/Plaer1/ATOMS/tarball/refs/tags/v1.1.1.1.1.1",
+      "hash": "sha256-f+DkcIfiarwpEXYd+NHKlrcgAP6us23m+EXyz9SI2Rs="
+    },
     "Adwaita": {
       "type": "GitRelease",
       "repository": {
