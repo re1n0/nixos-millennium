@@ -117,10 +117,10 @@
       "version_upper_bound": null,
       "release_prefix": null,
       "submodules": false,
-      "version": "5.3.4",
-      "revision": "b78fa601e5bd3d9ac948e1342f8076c8f83e5506",
-      "url": "https://api.github.com/repos/SaiyajinK/Minimal-Dark-for-Steam/tarball/refs/tags/5.3.4",
-      "hash": "sha256-iyTag6BcsxotnTdWgtuowxcOSwElfguion5xHxGyNjY="
+      "version": "5.3.5",
+      "revision": "38fe6e9a7b1fe3780ddc043767e4c9f13cf90d6c",
+      "url": "https://api.github.com/repos/SaiyajinK/Minimal-Dark-for-Steam/tarball/refs/tags/5.3.5",
+      "hash": "sha256-ZAJX5Imq8O4FLd3uQ+lXgFa3mGg0Wbs2VnFXSFH4ma4="
     },
     "SpaceTheme": {
       "type": "Git",
@@ -135,19 +135,6 @@
       "url": "https://github.com/SpaceTheme/Steam/archive/afeee3a0e5ca33dc14ab1d4b3cef7eba209ad796.tar.gz",
       "hash": "sha256-dxII4Xfx3g2lgfVQcOkysDrccnOp99oDvVxHbPoekqY="
     },
-    "non-steam-playtimes": {
-      "type": "Git",
-      "repository": {
-        "type": "GitHub",
-        "owner": "k0d13",
-        "repo": "steam-non-steam-playtimes"
-      },
-      "branch": "main",
-      "submodules": false,
-      "revision": "3d276fba62ec4920e03b344eb045e4b186944e54",
-      "url": "https://github.com/k0d13/steam-non-steam-playtimes/archive/3d276fba62ec4920e03b344eb045e4b186944e54.tar.gz",
-      "hash": "sha256-XAcN0IaeBbjaIoJKO0in8MN81+zTXpCUhjEsky8pzXg="
-    },
     "browser-history": {
       "type": "Git",
       "repository": {
@@ -160,6 +147,19 @@
       "revision": "e6ec2ab37a63c7ec245b7d893f7cf94a07fb45c3",
       "url": "https://github.com/ricewind012/steam-browser-history/archive/e6ec2ab37a63c7ec245b7d893f7cf94a07fb45c3.tar.gz",
       "hash": "sha256-Ed/I5vOYsZJWvvNyD0+5oZAYuqZvaP/6owrp3kLrh+8="
+    },
+    "non-steam-playtimes": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "k0d13",
+        "repo": "steam-non-steam-playtimes"
+      },
+      "branch": "main",
+      "submodules": false,
+      "revision": "3d276fba62ec4920e03b344eb045e4b186944e54",
+      "url": "https://github.com/k0d13/steam-non-steam-playtimes/archive/3d276fba62ec4920e03b344eb045e4b186944e54.tar.gz",
+      "hash": "sha256-XAcN0IaeBbjaIoJKO0in8MN81+zTXpCUhjEsky8pzXg="
     }
   },
   "version": 7
