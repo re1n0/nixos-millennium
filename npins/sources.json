@@ -131,9 +131,9 @@
       },
       "branch": "main",
       "submodules": false,
-      "revision": "8743434fd06ec9a64e774cd364bef0902de47c73",
-      "url": "https://github.com/SpaceTheme/Steam/archive/8743434fd06ec9a64e774cd364bef0902de47c73.tar.gz",
-      "hash": "sha256-2vczm+XT+6aAcqicyhrpj2p0hYhKr8XWvDNUapFNqCU="
+      "revision": "ee74892d0a02ccd9cc6a505b5a9fc3fa252e2435",
+      "url": "https://github.com/SpaceTheme/Steam/archive/ee74892d0a02ccd9cc6a505b5a9fc3fa252e2435.tar.gz",
+      "hash": "sha256-b4OokKe8/Zk/P2/JXF3YUeuan8BB6qpg91XilbivgZo="
     },
     "browser-history": {
       "type": "Git",
