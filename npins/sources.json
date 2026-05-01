@@ -89,9 +89,9 @@
       },
       "branch": "main",
       "submodules": false,
-      "revision": "4810d74110da02bfcc40394f70cd9b80ea769f28",
-      "url": "https://github.com/kuska1/Material-Theme/archive/4810d74110da02bfcc40394f70cd9b80ea769f28.tar.gz",
-      "hash": "sha256-Q8wzjsaXrMOR9FmGwf7dTo79fACFiWVFHc7gEjskbUQ="
+      "revision": "32aabf33335b0450ff4fb90ff76848fa48072b66",
+      "url": "https://github.com/kuska1/Material-Theme/archive/32aabf33335b0450ff4fb90ff76848fa48072b66.tar.gz",
+      "hash": "sha256-a99GfyHfWPOJ7biRs+ks1YRbalRkBhXXrokwEotuqBc="
     },
     "MetroSteam": {
       "type": "Git",
@@ -117,10 +117,10 @@
       "version_upper_bound": null,
       "release_prefix": null,
       "submodules": false,
-      "version": "5.3.5",
-      "revision": "38fe6e9a7b1fe3780ddc043767e4c9f13cf90d6c",
-      "url": "https://api.github.com/repos/SaiyajinK/Minimal-Dark-for-Steam/tarball/refs/tags/5.3.5",
-      "hash": "sha256-ZAJX5Imq8O4FLd3uQ+lXgFa3mGg0Wbs2VnFXSFH4ma4="
+      "version": "5.4.0",
+      "revision": "56ac34e5e40f7ef80bb6c77cc7994b84b3aadb22",
+      "url": "https://api.github.com/repos/SaiyajinK/Minimal-Dark-for-Steam/tarball/refs/tags/5.4.0",
+      "hash": "sha256-Nwpv+6l2nAZ2DwUHmVQy1YEg6T6Dcuo1EinRRMgGOFo="
     },
     "SpaceTheme": {
       "type": "Git",
@@ -131,9 +131,9 @@
       },
       "branch": "main",
       "submodules": false,
-      "revision": "297360501e47fbab7670a2c4cd239d7e46ee5a0c",
-      "url": "https://github.com/SpaceTheme/Steam/archive/297360501e47fbab7670a2c4cd239d7e46ee5a0c.tar.gz",
-      "hash": "sha256-D9d9O7YOrx3vP4LS+sakLwTASz6JxLWLAdSeg8Fn0dI="
+      "revision": "9e777bd5f517af47fab423e6ce7169d834643313",
+      "url": "https://github.com/SpaceTheme/Steam/archive/9e777bd5f517af47fab423e6ce7169d834643313.tar.gz",
+      "hash": "sha256-ZMDqPHUa7jHAMf1tZtirCX1t8O6SaAl8yYbssaGjSUc="
     },
     "browser-history": {
       "type": "Git",
