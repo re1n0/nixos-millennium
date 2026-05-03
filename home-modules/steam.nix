@@ -9,7 +9,7 @@ let
   cfg = config.programs.steam;
   jsonFormat = pkgs.formats.json { };
 
-  stylixEnabled = osConfig.stylix.targets.steam.enable;
+  stylixEnabled = (config ? "stylix") && (osConfig.stylix.targets.steam.enable);
 in
 {
   options.programs.steam = {
