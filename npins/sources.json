@@ -75,10 +75,10 @@
       "version_upper_bound": null,
       "release_prefix": null,
       "submodules": false,
-      "version": "v2.0.3",
-      "revision": "cfb2398b6522ce8da45ae96b0647e220b588a6c9",
-      "url": "https://api.github.com/repos/jcdoll/hltb-millennium-plugin/tarball/refs/tags/v2.0.3",
-      "hash": "sha256-gDYRwjigGajWOgAzU3xA/kFKgWOawD6hjUw6SzvhjhA="
+      "version": "v2.1.0",
+      "revision": "49d59edf7475ceef42734627687bdb71d7d08709",
+      "url": "https://api.github.com/repos/jcdoll/hltb-millennium-plugin/tarball/refs/tags/v2.1.0",
+      "hash": "sha256-q6hCSkviga/KuGOSlLuZP/QNLobi7bao3VuJJU/Tiss="
     },
     "Material-Theme": {
       "type": "Git",
@@ -131,9 +131,9 @@
       },
       "branch": "main",
       "submodules": false,
-      "revision": "9e777bd5f517af47fab423e6ce7169d834643313",
-      "url": "https://github.com/SpaceTheme/Steam/archive/9e777bd5f517af47fab423e6ce7169d834643313.tar.gz",
-      "hash": "sha256-ZMDqPHUa7jHAMf1tZtirCX1t8O6SaAl8yYbssaGjSUc="
+      "revision": "f9d587024d44d35cba0b8a523d898dd83def0863",
+      "url": "https://github.com/SpaceTheme/Steam/archive/f9d587024d44d35cba0b8a523d898dd83def0863.tar.gz",
+      "hash": "sha256-QwgfzuIq/fb8PedhZ0J31IYYf9K/Q2a4CxiY+2YGpmY="
     },
     "browser-history": {
       "type": "Git",
