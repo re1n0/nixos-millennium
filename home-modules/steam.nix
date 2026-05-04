@@ -19,7 +19,7 @@ in
         example = pkgs.milleniumThemes.metro;
       };
 
-    config =
+    millenniumConfig =
       with lib;
       mkOption {
         type = types.submodule {
@@ -61,7 +61,7 @@ in
         ];
       */
 
-      programs.steam.config = lib.mkMerge [
+      programs.steam.millenniumConfig = lib.mkMerge [
         {
           general = {
             checkForMillenniumUpdates = false;
@@ -101,8 +101,8 @@ in
     }
 
     {
-      xdg.configFile."millennium/config.json" = lib.mkIf (cfg.config != { }) {
-        source = jsonFormat.generate "config.json" cfg.config;
+      xdg.configFile."millennium/config.json" = lib.mkIf (cfg.millenniumConfig != { }) {
+        source = jsonFormat.generate "config.json" cfg.millenniumConfig;
         force = true;
       };
     }
