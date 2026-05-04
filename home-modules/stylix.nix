@@ -11,7 +11,7 @@
   config = lib.mkIf (config.stylix.enable && config.stylix.targets.millenniumSteam.enable) {
     programs.steam.theme = lib.mkDefault pkgs.millenniumThemes.adwaita;
 
-    programs.steam.config.themes.themeColors."adwaita" =
+    programs.steam.millenniumConfig.themes.themeColors."adwaita" =
       let
         hexToRGB =
           hex:
