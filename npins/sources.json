@@ -102,9 +102,9 @@
       },
       "branch": "master",
       "submodules": false,
-      "revision": "8741bfc4b18c3d856c27d69e95d1e45811305dd8",
-      "url": "https://github.com/RoseTheFlower/MetroSteam/archive/8741bfc4b18c3d856c27d69e95d1e45811305dd8.tar.gz",
-      "hash": "sha256-hHJKmFLx29E2LTA/VbcxN/C0mzQE0zjPtETclQk2spw="
+      "revision": "5aac069af4918a6e31fd658d177eba4b675047aa",
+      "url": "https://github.com/RoseTheFlower/MetroSteam/archive/5aac069af4918a6e31fd658d177eba4b675047aa.tar.gz",
+      "hash": "sha256-DUFgDSGsOMLCccgRQ+io2fqnuX2KgkW3+vqGr2yGFHQ="
     },
     "Minimal-Dark": {
       "type": "GitRelease",
