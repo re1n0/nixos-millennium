@@ -13,7 +13,7 @@ In order to use this, you need to include it in your flake's inputs like this:
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
 
     nixos-millennium = {
-      url = "/home/priv/repos/nixos-millennium";
+      url = "github:re1n0/nixos-millennium";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
