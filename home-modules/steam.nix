@@ -1,6 +1,5 @@
 {
   config,
-  osConfig,
   pkgs,
   lib,
   ...
@@ -8,8 +7,6 @@
 let
   cfg = config.programs.steam;
   jsonFormat = pkgs.formats.json { };
-
-  stylixEnabled = osConfig.stylix.targets.steam.enable;
 in
 {
   options.programs.steam = {
@@ -64,8 +61,6 @@ in
         ];
       */
 
-      programs.steam.theme = lib.mkIf stylixEnabled (lib.mkDefault pkgs.millenniumThemes.adwaita);
-
       programs.steam.config = lib.mkMerge [
         {
           general = {
@@ -85,10 +80,6 @@ in
 
         (lib.mkIf (cfg.theme != null) {
           themes.activeTheme = cfg.theme.pname or "custom-theme";
-        })
-
-        (lib.mkIf stylixEnabled {
-          themes.themeColors."adwaita" = (import ./stylix.nix { inherit lib config; }).default;
         })
       ];
     }
