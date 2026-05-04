@@ -35,6 +35,7 @@ in
 
       packages = {
         close-steam-session = pkgs.callPackage ./close-steam-session { };
-      } // (inputs.millennium.packages.${system} or {});
+      }
+      // (inputs.millennium.packages.${system} or { });
     };
 }
