@@ -56,11 +56,11 @@
         "nixpkgs-lib": "nixpkgs-lib"
       },
       "locked": {
-        "lastModified": 1777678872,
-        "narHash": "sha256-EPIFsulyon7Z1vLQq5Fk64GR8L7cQsT+IPhcsukVbgk=",
+        "lastModified": 1777932387,
+        "narHash": "sha256-nUYVPiqrzr36ThiQOAr5MKeGHDBSDM3OFWkz0uDjOvc=",
         "owner": "hercules-ci",
         "repo": "flake-parts",
-        "rev": "5250617bffd85403b14dbf43c3870e7f255d2c16",
+        "rev": "71a3a77326609675e9f8b51084cf23d5d1945899",
         "type": "github"
       },
       "original": {
@@ -195,11 +195,11 @@
       },
       "locked": {
         "dir": "packages/nix",
-        "lastModified": 1777740058,
-        "narHash": "sha256-ZvVZpQH2F3NwKA0Gki5QJFqb3Zo5WEHuDZoukaabLLY=",
+        "lastModified": 1777922695,
+        "narHash": "sha256-RAsT46bktc85d4iIvPhLFio/7gyMOqusPWD2CnaI+U8=",
         "owner": "SteamClientHomebrew",
         "repo": "Millennium",
-        "rev": "299b10fdf680afadbcea57077cc5f49237fa8025",
+        "rev": "8f6a93c62a8d2ed246fb61b0b354dccb2d2b396c",
         "type": "github"
       },
       "original": {

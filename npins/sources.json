@@ -117,10 +117,10 @@
       "version_upper_bound": null,
       "release_prefix": null,
       "submodules": false,
-      "version": "5.4.1",
-      "revision": "d485b216183b1ca7f240d453e5c2806d47a8a5d4",
-      "url": "https://api.github.com/repos/SaiyajinK/Minimal-Dark-for-Steam/tarball/refs/tags/5.4.1",
-      "hash": "sha256-PH7uIYgZpEUzRBDeG2Az3H6bn5XKsEdWooBeMeQz/XQ="
+      "version": "5.4.2",
+      "revision": "6362a7d8b50fc98edd465b4ccc8b989ddbc78f88",
+      "url": "https://api.github.com/repos/SaiyajinK/Minimal-Dark-for-Steam/tarball/refs/tags/5.4.2",
+      "hash": "sha256-KAWsbISQBInaIwRpKkmUfaQBnGg30zrgJNgt2xBi6xQ="
     },
     "SpaceTheme": {
       "type": "Git",
@@ -131,9 +131,9 @@
       },
       "branch": "main",
       "submodules": false,
-      "revision": "f9d587024d44d35cba0b8a523d898dd83def0863",
-      "url": "https://github.com/SpaceTheme/Steam/archive/f9d587024d44d35cba0b8a523d898dd83def0863.tar.gz",
-      "hash": "sha256-QwgfzuIq/fb8PedhZ0J31IYYf9K/Q2a4CxiY+2YGpmY="
+      "revision": "ca09195e14cd9b75a119a8d962167a8cf4d681a8",
+      "url": "https://github.com/SpaceTheme/Steam/archive/ca09195e14cd9b75a119a8d962167a8cf4d681a8.tar.gz",
+      "hash": "sha256-/+UoevE/b6C7mKLGM6u8VhTcwBfFrUxkkJsql0cmJdE="
     },
     "browser-history": {
       "type": "Git",
