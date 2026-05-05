@@ -1,32 +1,9 @@
+{ callPackage }:
 {
-  stdenvNoCC,
-  pins,
-}:
-let
-  mkTheme =
-    pname: version: src:
-    stdenvNoCC.mkDerivation {
-      inherit pname version src;
-      installPhase = ''
-        mkdir -p $out
-        cp -r ./* $out/
-      '';
-    };
-
-  inherit (pins)
-    Adwaita
-    ATOMS
-    Material-Theme
-    MetroSteam
-    Minimal-Dark
-    SpaceTheme
-    ;
-in
-{
-  adwaita = mkTheme "adwaita" Adwaita.version Adwaita;
-  atoms = mkTheme "atoms" ATOMS.version ATOMS;
-  material-theme = mkTheme "material-theme" "0-git+${Material-Theme.revision}" Material-Theme;
-  metro = mkTheme "metro" "0-git+${MetroSteam.revision}" MetroSteam;
-  minimal-dark = mkTheme "minimal-dark" Minimal-Dark.version Minimal-Dark;
-  space = mkTheme "space" "0-git+${SpaceTheme.revision}" SpaceTheme;
+  adwaita = callPackage ./adwaita.nix { };
+  atoms = callPackage ./atoms.nix { };
+  material-theme = callPackage ./material-theme.nix { };
+  metro = callPackage ./metro.nix { };
+  minimal-dark = callPackage ./minimal-dark.nix { };
+  space = callPackage ./space.nix { };
 }

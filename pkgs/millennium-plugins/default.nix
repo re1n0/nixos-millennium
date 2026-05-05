@@ -1,33 +1,37 @@
 {
   stdenvNoCC,
-  pins,
+  bun,
+  callPackage,
 }:
 let
-  mkPlugin =
-    pname: version: src:
+  fetchBunDeps =
+    { src, hash, ... }@args:
     stdenvNoCC.mkDerivation {
-      inherit pname version src;
+      pname = args.pname or "${src.name or "source"}-bun-deps";
+      version = args.version or "unknown";
+      inherit src;
+
+      nativeBuildInputs = [ bun ];
+
+      buildPhase = ''
+        export HOME=$TMPDIR
+        bun install --no-progress --frozen-lockfile --ignore-scripts
+      '';
 
       installPhase = ''
         mkdir -p $out
-        cp -r ./* $out/
+        cp -R ./node_modules $out
+        cp ./bun.lock $out/
       '';
-    };
 
-  inherit (pins)
-    Extendium
-    Gratitude
-    HLTB
-    non-steam-playtimes
-    browser-history
-    ;
+      dontFixup = true;
+      outputHash = hash;
+      outputHashAlgo = "sha256";
+      outputHashMode = "recursive";
+    };
 in
 {
-  extendium = mkPlugin "extendium" Extendium.version Extendium;
-  gratitude = mkPlugin "gratitude" Gratitude.version Gratitude;
-  hltb = mkPlugin "hltb-for-millennium" HLTB.version HLTB;
-  non-steam-playtimes =
-    mkPlugin "non-steam-playtimes" "0-git+${non-steam-playtimes.revision}"
-      non-steam-playtimes;
-  browser-history = mkPlugin "browser-history" "0-git+${browser-history.revision}" browser-history;
+  extendium = callPackage ./extendium.nix { inherit fetchBunDeps; };
+  gratitude = callPackage ./gratitude.nix { };
+  # hltb = callPackage ./hltb.nix { };
 }

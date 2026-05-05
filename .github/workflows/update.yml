@@ -2,7 +2,7 @@ name: update-dependencies
 on:
   workflow_dispatch:
   schedule:
-    - cron: '0 0 * * *' # at 3 am UTC
+    - cron: '0 0 * * *' # at midnight UTC
 
 jobs:
   update-dependencies:
@@ -18,21 +18,39 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v6
 
-      - name: Install npins
-        run: nix profile install 'nixpkgs#npins'
-
       - name: Update flake.lock
         run: nix flake update
 
-      - name: Update npins
-        run: npins update
+      - name: Update adwaita
+        run: nix run 'nixpkgs#nix-update' -- --flake 'legacyPackages.x86_64-linux.millenniumThemes.adwaita'
+
+      - name: Update atoms
+        run: nix run 'nixpkgs#nix-update' -- --flake 'legacyPackages.x86_64-linux.millenniumThemes.atoms'
+
+      - name: Update minimal-dark
+        run: nix run 'nixpkgs#nix-update' -- --flake 'legacyPackages.x86_64-linux.millenniumThemes.minimal-dark'
+
+      - name: Update material-theme
+        run: nix run 'nixpkgs#nix-update' -- --flake --version=branch 'legacyPackages.x86_64-linux.millenniumThemes.material-theme'
+
+      - name: Update metro
+        run: nix run 'nixpkgs#nix-update' -- --flake --version=branch 'legacyPackages.x86_64-linux.millenniumThemes.metro'
+
+      - name: Update space
+        run: nix run 'nixpkgs#nix-update' -- --flake --version=branch 'legacyPackages.x86_64-linux.millenniumThemes.space'
+
+      - name: Update gratitude
+        run: nix run 'nixpkgs#nix-update' -- --flake 'legacyPackages.x86_64-linux.millenniumPlugins.gratitude'
+
+      # - name: Update hltb
+      #   run: nix run 'nixpkgs#nix-update' -- --flake 'legacyPackages.x86_64-linux.millenniumPlugins.hltb'
 
       - name: Commit and push changes
         uses: stefanzweifel/git-auto-commit-action@v7
         with:
           commit_message: "chore: bump lock"
           branch: master
-          file_pattern: "flake.lock npins/sources.json"
+          file_pattern: "flake.lock pkgs/**/*.nix"
           commit_user_name: "github-actions[bot]"
           commit_user_email: "41898282+github-actions[bot]@users.noreply.github.com"
           commit_author: "github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>"
