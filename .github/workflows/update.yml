@@ -2,7 +2,7 @@ name: update-dependencies
 on:
   workflow_dispatch:
   schedule:
-    - cron: '0 0 * * *' # at 3 am UTC
+    - cron: '0 0 * * *' # at midnight UTC
 
 jobs:
   update-dependencies:
@@ -18,21 +18,73 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v6
 
-      - name: Install npins
-        run: nix profile install 'nixpkgs#npins'
-
       - name: Update flake.lock
         run: nix flake update
 
+      - name: Install npins
+        run: nix profile install 'nixpkgs#npins'
+
       - name: Update npins
         run: npins update
+
+      - name: Update lockfiles
+        run: |
+          set -eo pipefail
+          SYSTEM="x86_64-linux"
+
+          find_pkgs() {
+            local attr="$1"
+            nix eval ".#${attr}.\"$SYSTEM\"" --json --apply '
+              let
+                startsWith = prefix: str: builtins.substring 0 (builtins.stringLength prefix) str == prefix;
+      
+                findPaths = prefix: set:
+                  let
+                    names = if prefix == "" 
+                            then builtins.filter (n: startsWith "millenniumPlugins" n) (builtins.attrNames set)
+                            else builtins.attrNames set;
+                  in
+                  builtins.concatLists (builtins.map (name:
+                    let
+                      path = if prefix == "" then name else "${prefix}.${name}";
+                      value = set.${name};
+                    in
+                    if builtins.isAttrs value && value ? type && value.type == "derivation" then
+                      [ { pkg = path; src = "'${attr}'"; } ]
+                    else if builtins.isAttrs value && !(value ? type) then
+                      findPaths path value
+                    else
+                      []
+                  ) names);
+              in
+              findPaths ""' 2>/dev/null || echo "[]"
+          }
+
+          LEGACY_PKGS=$(find_pkgs "legacyPackages")
+
+          ALL_PKGS=$(jq -r '.[] | "\(.src).\(.pkg)"' <<< "$LEGACY_PKGS")
+
+          if [ -z "$ALL_PKGS" ]; then
+            echo "No packages found."
+            exit 0
+          fi
+
+          while IFS= read -r entry; do
+            src="${entry%%.*}"      
+            pkg="${entry#*.}"       
+  
+            full=".#${src}.\"${SYSTEM}\".${pkg}.lock"
+  
+            echo "Running ${full}..."
+            nix run "$full"
+          done <<< "$ALL_PKGS"                
 
       - name: Commit and push changes
         uses: stefanzweifel/git-auto-commit-action@v7
         with:
           commit_message: "chore: bump lock"
           branch: master
-          file_pattern: "flake.lock npins/sources.json"
+          file_pattern: "flake.lock npins/sources.json **/lock.json"
           commit_user_name: "github-actions[bot]"
           commit_user_email: "41898282+github-actions[bot]@users.noreply.github.com"
           commit_author: "github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>"

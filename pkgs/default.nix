@@ -8,7 +8,9 @@ in
 {
   systems = [ "x86_64-linux" ];
 
-  imports = [ inputs.flake-parts.flakeModules.easyOverlay ];
+  imports = [
+    inputs.flake-parts.flakeModules.easyOverlay
+  ];
 
   perSystem =
     {
@@ -29,11 +31,22 @@ in
       overlayAttrs = config.packages // config.legacyPackages;
 
       legacyPackages = {
-        millenniumThemes = pkgs.callPackage ./millennium-themes { inherit pins; };
-        millenniumPlugins = pkgs.callPackage ./millennium-plugins { inherit pins; };
+        
+
+        millenniumThemes = pkgs.callPackage ./millennium-themes {
+          inherit pins;
+        };
+
+        millenniumPlugins = import ./millennium-plugins {
+          inherit
+            inputs
+            pins
+            pkgs
+            ;
+        };
       };
 
-      packages = {
+      packages = {        
         close-steam-session = pkgs.callPackage ./close-steam-session { };
       }
       // (inputs.millennium.packages.${system} or { });
