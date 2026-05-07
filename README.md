@@ -42,7 +42,7 @@ The module supports Stylix and will apply the default theme as long, as Stylix i
   programs.steam.theme = pkgs.millenniumThemes.adwaita;
 
   programs.steam.millenniumConfig = {
-    themes.conditions."adwaita" = {
+    themes.conditions."adwaita-for-steam" = {
       "Login QR code" = "Show";
       "Keep pointer cursor for clickable elements" = "yes";
       "Remove rounded corners" = "yes";
