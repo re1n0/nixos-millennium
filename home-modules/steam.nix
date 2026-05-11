@@ -95,6 +95,7 @@ in
           name = ".local/share/millennium/plugins/${pkg.pname or pkg.name}";
           value = {
             source = pkg;
+            recursive = true;
           };
         }) cfg.plugins
       );
