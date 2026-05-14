@@ -18,8 +18,8 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v6
 
-      - name: Update flake.lock
-        run: nix flake update
+      # - name: Update flake.lock
+      #   run: nix flake update
 
       - name: Update adwaita
         run: nix run 'nixpkgs#nix-update' -- --flake 'legacyPackages.x86_64-linux.millenniumThemes.adwaita'
