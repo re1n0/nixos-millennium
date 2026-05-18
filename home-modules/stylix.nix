@@ -9,9 +9,9 @@
     config.lib.stylix.mkEnableTarget "Millennium Steam" true;
 
   config = lib.mkIf (config.stylix.enable && config.stylix.targets.millenniumSteam.enable) {
-    programs.steam.theme = lib.mkDefault pkgs.millenniumThemes.adwaita;
+    programs.steam.theme = lib.mkDefault pkgs.millenniumThemes.space;
 
-    programs.steam.millenniumConfig.themes.themeColors."adwaita-for-steam" =
+    programs.steam.millenniumConfig.themes.themeColors."space-theme-steam" =
       let
         hexToRGB =
           hex:
@@ -24,68 +24,28 @@
       in
       with config.lib.stylix.colors;
       {
-        "--adw-accent-bg-rbg" = hexToRGB base0D;
-        "--adw-accent-fg-rbg" = hexToRGB base00;
-        "--adw-accent-rgb" = hexToRGB base0D;
+        "--st-background" = hexToRGB base11;
 
-        "--adw-destructive-bg-rgb" = hexToRGB base08;
-        "--adw-destructive-fg-rgb" = hexToRGB base00;
-        "--adw-destructive-rgb" = hexToRGB base08;
+        "--st-accent-1" = hexToRGB base0D;
+        "--st-accent-2" = hexToRGB base16;
 
-        "--adw-success-bg-rgb" = hexToRGB base0B;
-        "--adw-success-fg-rgb" = hexToRGB base00;
-        "--adw-success-rgb" = hexToRGB base0B;
+        "--st-color-1" = hexToRGB base10;
+        "--st-color-2" = hexToRGB base00;
+        "--st-color-3" = hexToRGB base01;
+        "--st-color-4" = hexToRGB base02;
+        "--st-color-5" = hexToRGB base03;
 
-        "--adw-warning-bg-rgb" = hexToRGB base0E;
-        "--adw-warning-fg-rgb" = hexToRGB base00;
-        "--adw-warning-fg-a" = "0.8";
-        "--adw-warning-rgb" = hexToRGB base0E;
+        "--st-blue" = hexToRGB base0D;
+        "--st-blue-hover" = hexToRGB base16;
 
-        "--adw-error-bg-rgb" = hexToRGB base08;
-        "--adw-error-fg-rgb" = hexToRGB base00;
-        "--adw-error-rgb" = hexToRGB base08;
+        "--st-green" = hexToRGB base0B;
+        "--st-green-hover" = hexToRGB base14;
 
-        "--adw-window-bg-rgb" = hexToRGB base00;
-        "--adw-window-fg-rgb" = hexToRGB base05;
-        "--adw-view-bg-rgb" = hexToRGB base00;
-        "--adw-view-fg-rgb" = hexToRGB base05;
+        "--st-red" = hexToRGB base08;
+        "--st-red-hover" = hexToRGB base12;
 
-        "--adw-headerbar-bg-rgb" = hexToRGB base01;
-        "--adw-headerbar-fg-rgb" = hexToRGB base05;
-        "--adw-headerbar-border-rgb" = hexToRGB base01;
-        "--adw-headerbar-backdrop-rgb" = hexToRGB base00;
-        "--adw-headerbar-shade-rgb" = "0, 0, 0";
-        "--adw-headerbar-shade-a" = "0.9";
-
-        "--adw-sidebar-bg-rgb" = hexToRGB base01;
-        "--adw-sidebar-fg-rgb" = hexToRGB base05;
-        "--adw-sidebar-backdrop-rgb" = hexToRGB base00;
-        "--adw-sidebar-shade-rgb" = "0, 0, 0";
-        "--adw-sidebar-shade-a" = "0.36";
-
-        "--adw-secondary-sidebar-bg-rgb" = hexToRGB base01;
-        "--adw-secondary-sidebar-fg-rgb" = hexToRGB base05;
-        "--adw-secondary-sidebar-backdrop-rgb" = hexToRGB base00;
-        "--adw-secondary-sidebar-shade-rgb" = "0, 0, 0";
-        "--adw-secondary-sidebar-shade-a" = "0.36";
-
-        "--adw-card-bg-rgb" = "0, 0, 0";
-        "--adw-card-bg-a" = "0.08";
-        "--adw-card-fg-rgb" = hexToRGB base05;
-        "--adw-card-shade-rgb" = "0, 0, 0";
-        "--adw-card-shade-a" = "0.36";
-
-        "--adw-dialog-bg-rgb" = hexToRGB base01;
-        "--adw-dialog-fg-rgb" = hexToRGB base05;
-        "--adw-popover-bg-rgb" = hexToRGB base01;
-        "--adw-popover-fg-rgb" = hexToRGB base05;
-        "--adw-popover-shade-rgb" = hexToRGB base01;
-        "--adw-popover-shade-a" = "0.36";
-
-        "--adw-thumbnail-bg-rgb" = hexToRGB base00;
-        "--adw-thumbnail-fg-rgb" = hexToRGB base05;
-        "--adw-shade-rgb" = "0, 0, 0";
-        "--adw-shade-a" = "0.36";
+        "--st-yellow" = hexToRGB base0A;
+        "--st-yellow-hover" = hexToRGB base13;
       };
   };
 }

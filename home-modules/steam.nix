@@ -16,7 +16,7 @@ in
         type = types.nullOr types.package;
         default = null;
         description = "The theme package to apply for Millennium Steam";
-        example = pkgs.milleniumThemes.metro;
+        example = pkgs.milleniumThemes.space;
       };
 
     millenniumConfig =
@@ -67,6 +67,7 @@ in
             checkForMillenniumUpdates = false;
             checkForPluginAndThemeUpdates = false;
             onMillenniumUpdate = 0;
+            shouldShowThemePluginUpdateNotifications = false;
           };
 
           misc.hasShownWelcomeModal = true;
