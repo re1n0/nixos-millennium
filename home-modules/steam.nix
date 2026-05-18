@@ -85,7 +85,7 @@ in
     }
 
     (lib.mkIf (cfg.theme != null) {
-      home.file.".local/share/Steam/steamui/skins/${cfg.theme.pname or "custom-theme"}".source =
+      home.file.".local/share/Steam/millennium/themes/${cfg.theme.pname or "custom-theme"}".source =
         cfg.theme;
     })
 
