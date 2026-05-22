@@ -66,6 +66,8 @@ jobs:
             exit 0
           fi
 
+          set +e pipefail
+
           while IFS= read -r entry; do
             src="${entry%%.*}"            
             pkg="${entry#*.}"             

@@ -26,7 +26,9 @@ buildNpmPackage (finalAttrs: {
     hash = "sha256-Ed/I5vOYsZJWvvNyD0+5oZAYuqZvaP/6owrp3kLrh+8=";
   };
 
-  npmDepsHash = "sha256-uB16oLWETaJ/Cv/8g5je1LLsJj/22aTCCjwQNEKk+Ro=";
+  npmDepsHash = "sha256-96RSE+AuOUiTltxIo6F1920SUcmwJTa0+r7qZBKVzq0=";
+
+  npmDepsFetcherVersion = 2;
 
   npmFlags = [ "--legacy-peer-deps" ];
 
