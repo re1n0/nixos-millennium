@@ -5,13 +5,13 @@
 }:
 stdenvNoCC.mkDerivation {
   pname = "metro-steam";
-  version = "0-unstable-2026-05-22";
+  version = "0-unstable-2026-05-23";
 
   src = fetchFromGitHub {
     owner = "RoseTheFlower";
     repo = "MetroSteam";
-    rev = "d09baded8f771f186c2705975f2293331b6e7e83";
-    hash = "sha256-FdgVkoepIgFOxeI/mJxfnbU605O1hbJTgVh6OsFtKtc=";
+    rev = "a4cbf7ef4c9dcc7560d103139b6063dbc532bceb";
+    hash = "sha256-xc9jUtaINHmxE0QRUHfx0WDVzexxJwWQpVWLOEyEd08=";
   };
 
   installPhase = ''
