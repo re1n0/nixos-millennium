@@ -14,7 +14,7 @@ let
     fi
   '';
 in
-buildNpmPackage (finalAttrs: {
+buildNpmPackage (_finalAttrs: {
   pname = "browser_history";
 
   version = "0-unstable-2026-03-05";
