@@ -5,7 +5,7 @@
 }:
 stdenvNoCC.mkDerivation {
   pname = "space-theme-steam";
-  version = "0-unstable-2026-05-24";
+  version = "20250912-unstable-2026-05-24";
 
   src = fetchFromGitHub {
     owner = "SpaceTheme";
