@@ -17,13 +17,13 @@ in
 buildNpmPackage (_finalAttrs: {
   pname = "browser_history";
 
-  version = "0-unstable-2026-03-05";
+  version = "0-unstable-2026-05-30";
 
   src = fetchFromGitHub {
     owner = "ricewind012";
     repo = "steam-browser-history";
-    rev = "e6ec2ab37a63c7ec245b7d893f7cf94a07fb45c3";
-    hash = "sha256-Ed/I5vOYsZJWvvNyD0+5oZAYuqZvaP/6owrp3kLrh+8=";
+    rev = "8214f3641be641610e8237f9e14a21fdcbb4a735";
+    hash = "sha256-B6J4wpdEhF1yN3/kuOR19u7TrXWrLKLpx6/L4w5ng+k=";
   };
 
   npmDepsHash = "sha256-96RSE+AuOUiTltxIo6F1920SUcmwJTa0+r7qZBKVzq0=";
