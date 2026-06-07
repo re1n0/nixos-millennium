@@ -45,11 +45,11 @@
       },
       "locked": {
         "dir": "packages/nix",
-        "lastModified": 1780615872,
-        "narHash": "sha256-el3a1baslO1yWQJAPN0a1IPEbVg4AgB/sx1sRbsSBSk=",
+        "lastModified": 1780800664,
+        "narHash": "sha256-Osrlk97OjTl9wg3E1QmWi1nnWgQRjJyQN4kmLu/DpUU=",
         "owner": "SteamClientHomebrew",
         "repo": "Millennium",
-        "rev": "3957498390dd820a5a9b70bc3cff6e450e8be1da",
+        "rev": "daa09988bbcae9df5c929951e985adecdb06a16e",
         "type": "github"
       },
       "original": {
@@ -63,17 +63,17 @@
     "millennium-src": {
       "flake": false,
       "locked": {
-        "lastModified": 1780522595,
-        "narHash": "sha256-YL86U4yogUM2CqOfsnJTagvaztoQlUYiAO760/IwTr4=",
+        "lastModified": 1780800522,
+        "narHash": "sha256-Na2+zomNGTF2MPoX5Wm72MMi3dl+CQRtfFQHH0AT5JU=",
         "owner": "SteamClientHomebrew",
         "repo": "Millennium",
-        "rev": "d110f6bdda0a32c4bc99e9ecb48920b010b81a44",
+        "rev": "bd79fe7a94aad1e840d8cae54d6b5233d80268a8",
         "type": "github"
       },
       "original": {
         "owner": "SteamClientHomebrew",
         "repo": "Millennium",
-        "rev": "d110f6bdda0a32c4bc99e9ecb48920b010b81a44",
+        "rev": "bd79fe7a94aad1e840d8cae54d6b5233d80268a8",
         "type": "github"
       }
     },

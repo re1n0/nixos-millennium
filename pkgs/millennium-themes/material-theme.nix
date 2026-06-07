@@ -5,13 +5,13 @@
 }:
 stdenvNoCC.mkDerivation {
   pname = "material-theme-steam";
-  version = "0-unstable-2026-06-05";
+  version = "0-unstable-2026-06-06";
 
   src = fetchFromGitHub {
     owner = "kuska1";
     repo = "Material-Theme";
-    rev = "fec98dcecd89c1676c47b5b8fee9a63d02412837";
-    hash = "sha256-x0Ns7D/f3UFT5L4g+wBiHQqttaY1+CYfqhEEzYn/fnI=";
+    rev = "548b608bfd3f66c564182ebb60433692705b2c45";
+    hash = "sha256-8rgralFGODs6wo/9lz25I+zRHntnwusi5l3Y3M+0dy8=";
   };
 
   installPhase = ''
