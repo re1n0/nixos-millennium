@@ -6,13 +6,13 @@
 buildNpmPackage (finalAttrs: {
   pname = "gratitude";
 
-  version = "1.1.2";
+  version = "1.1.5";
 
   src = fetchFromGitHub {
     owner = "BlythT";
     repo = "Gratitude-Millennium-Plugin";
     rev = "v${finalAttrs.version}";
-    hash = "sha256-Q+32LrlzRZm/RCMfFGfwbJlP065qWPRGKgkXDmzQQSo=";
+    hash = "sha256-IEs6h/X5z6cpfhsXAWSN+fb/lCy3ZqyfMPKoTg4w9iQ=";
   };
 
   npmDepsHash = "sha256-0Ak8FWwGPUvUYHmWA5w/quHBCF4DBM8o9Sn5ltlbJL4=";
