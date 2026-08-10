@@ -1,0 +1,64 @@
+name: update
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 0 * * *'
+
+jobs:
+  update-dependencies:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Install Nix
+        uses: cachix/install-nix-action@v31
+        with:
+          extra_nix_config: |
+            experimental-features = nix-command flakes
+          github_access_token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Checkout
+        uses: actions/checkout@v7
+
+      - name: Update flake.lock
+        run: nix flake update --commit-lock-file
+
+      - name: Update adwaita
+        run: nix run 'nixpkgs#nix-update' -- --flake --commit 'adwaita'
+
+      - name: Update atoms
+        run: nix run 'nixpkgs#nix-update' -- --flake --commit 'atoms'
+
+      - name: Update minimal-dark
+        run: nix run 'nixpkgs#nix-update' -- --flake --commit 'minimal-dark'
+
+      - name: Update material-theme
+        run: nix run 'nixpkgs#nix-update' -- --flake --commit --version=branch 'material-theme'
+
+      - name: Update metro
+        run: nix run 'nixpkgs#nix-update' -- --flake --commit --version=branch 'metro'
+
+      - name: Update space
+        run: nix run 'nixpkgs#nix-update' -- --flake --commit --version=branch 'space'
+      
+      # - name: Update gratitude
+      #   run: nix run 'nixpkgs#nix-update' -- --flake --commit 'gratitude'
+
+      - name: Update browser-history
+        run: nix run 'nixpkgs#nix-update' -- --flake --commit --custom-dep node_modules --version=branch 'browser-history'
+
+      # - name: Update hltb
+      #   run: nix run 'nixpkgs#nix-update' -- --flake --use-update-script 'hltb'
+
+      - name: Update extendium
+        run: nix run 'nixpkgs#nix-update' -- --flake --commit --custom-dep node_modules 'extendium'
+      
+      - name: Update non-steam-playtimes
+        run: nix run 'nixpkgs#nix-update' -- --flake --commit 'non-steam-playtimes'
+
+      - name: Configure git
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+      - name: Push changes
+        run: git push origin master
+
