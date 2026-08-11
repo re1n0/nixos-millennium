@@ -18,6 +18,11 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v7
 
+      - name: Configure git
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
       - name: Update flake.lock
         run: nix flake update --commit-lock-file
 
@@ -53,11 +58,6 @@ jobs:
       
       - name: Update non-steam-playtimes
         run: nix run 'nixpkgs#nix-update' -- --flake --commit 'non-steam-playtimes'
-
-      - name: Configure git
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
       - name: Push changes
         run: git push origin master
