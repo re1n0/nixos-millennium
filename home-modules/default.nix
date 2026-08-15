@@ -1,10 +1,12 @@
-_: {
+{ self, ... }: {
   flake.homeManagerModules.default = {
     imports = [
       ./steam.nix
     ];
 
-    home-manager.useGlobalPkgs = true;
+    nixpkgs.overlays = [
+      self.overlays.default
+    ];
   };
 
   flake.homeManagerModules.stylix = {
