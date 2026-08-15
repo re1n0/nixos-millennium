@@ -1,10 +1,16 @@
-{ self, ... }: {
+{
+  self,
+  lib,
+  osConfig,
+  ...
+}:
+{
   flake.homeManagerModules.default = {
     imports = [
       ./steam.nix
     ];
 
-    nixpkgs.overlays = [
+    nixpkgs.overlays = lib.mkIf (!(osConfig.home-manager.useGlobalPkgs or false)) [
       self.overlays.default
     ];
   };
