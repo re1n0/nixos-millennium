@@ -3,6 +3,8 @@ _: {
     imports = [
       ./steam.nix
     ];
+
+    home-manager.useGlobalPkgs = true;
   };
 
   flake.homeManagerModules.stylix = {
