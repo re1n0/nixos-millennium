@@ -4,6 +4,8 @@
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
 
+    systems.url = "github:nix-systems/default";
+
     flake-parts.url = "github:hercules-ci/flake-parts";
 
     millennium = {
@@ -14,6 +16,8 @@
 
   outputs = inputs:
     inputs.flake-parts.lib.mkFlake {inherit inputs;} {
+      systems = import inputs.systems;
+
       imports = [
         ./home-modules
         ./modules
