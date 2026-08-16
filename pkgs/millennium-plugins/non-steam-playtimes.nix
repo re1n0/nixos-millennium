@@ -26,7 +26,8 @@ stdenv.mkDerivation (finalAttrs: {
   ];
 
   pnpmDeps = fetchPnpmDeps {
-    inherit (finalAttrs)
+    inherit
+      (finalAttrs)
       pname
       version
       src
@@ -59,7 +60,7 @@ stdenv.mkDerivation (finalAttrs: {
   meta = {
     description = "A Millennium plugin for tracking playtime of non-Steam apps ";
     homepage = "https://github.com/k0d13/steam-non-steam-playtimes";
-    maintainers = with lib.maintainers; [ rein ];
-    platforms = [ "x86_64-linux" ];
+    maintainers = with lib.maintainers; [rein];
+    platforms = ["x86_64-linux"];
   };
 })

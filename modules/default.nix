@@ -2,16 +2,19 @@
   lib,
   self,
   ...
-}:
-{
-  flake.nixosModules.default =
-    { options, pkgs, ... }:
+}: {
+  flake.nixosModules.default = {
+    options,
+    pkgs,
+    ...
+  }:
     lib.mkMerge [
       (lib.optionalAttrs (options ? home-manager) {
-        home-manager.sharedModules = [
-          self.homeManagerModules.default
-        ]
-        ++ lib.optional (options ? stylix) self.homeManagerModules.stylix;
+        home-manager.sharedModules =
+          [
+            self.homeManagerModules.default
+          ]
+          ++ lib.optional (options ? stylix) self.homeManagerModules.stylix;
       })
 
       {

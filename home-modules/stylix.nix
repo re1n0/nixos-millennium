@@ -3,27 +3,21 @@
   lib,
   pkgs,
   ...
-}:
-{
+}: {
   options.stylix.targets.millenniumSteam.enable =
     config.lib.stylix.mkEnableTarget "Millennium Steam" true;
 
   config = lib.mkIf (config.stylix.enable && config.stylix.targets.millenniumSteam.enable) {
     programs.steam.theme = lib.mkDefault pkgs.millenniumThemes.space;
 
-    programs.steam.millenniumConfig.themes.themeColors."space-theme-steam" =
-      let
-        hexToRGB =
-          hex:
-          let
-            r = lib.fromHexString (builtins.substring 0 2 hex);
-            g = lib.fromHexString (builtins.substring 2 2 hex);
-            b = lib.fromHexString (builtins.substring 4 2 hex);
-          in
-          "${toString r}, ${toString g}, ${toString b}";
-      in
-      with config.lib.stylix.colors;
-      {
+    programs.steam.millenniumConfig.themes.themeColors."space-theme-steam" = let
+      hexToRGB = hex: let
+        r = lib.fromHexString (builtins.substring 0 2 hex);
+        g = lib.fromHexString (builtins.substring 2 2 hex);
+        b = lib.fromHexString (builtins.substring 4 2 hex);
+      in "${toString r}, ${toString g}, ${toString b}";
+    in
+      with config.lib.stylix.colors; {
         "--st-background" = hexToRGB base11;
 
         "--st-accent-1" = hexToRGB base0D;

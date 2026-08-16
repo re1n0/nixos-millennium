@@ -24,6 +24,6 @@ stdenvNoCC.mkDerivation {
     description = "Material Theme for the Steam client";
     homepage = "https://github.com/kuska1/Material-Theme";
     license = lib.licenses.mit;
-    maintainers = with lib.maintainers; [ rein ];
+    maintainers = with lib.maintainers; [rein];
   };
 }

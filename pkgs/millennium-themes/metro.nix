@@ -23,6 +23,6 @@ stdenvNoCC.mkDerivation {
   meta = {
     description = "Metro theme for the Steam client";
     homepage = "https://github.com/RoseTheFlower/MetroSteam";
-    maintainers = with lib.maintainers; [ rein ];
+    maintainers = with lib.maintainers; [rein];
   };
 }

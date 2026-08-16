@@ -23,6 +23,6 @@ stdenvNoCC.mkDerivation (finalAttrs: {
   meta = {
     description = "ATOMS theme for the Steam client";
     homepage = "https://github.com/Plaer1/ATOMS";
-    maintainers = with lib.maintainers; [ rein ];
+    maintainers = with lib.maintainers; [rein];
   };
 })

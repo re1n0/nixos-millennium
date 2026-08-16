@@ -3,28 +3,24 @@
   pkgs,
   lib,
   ...
-}:
-let
+}: let
   cfg = config.programs.steam;
-  jsonFormat = pkgs.formats.json { };
+  jsonFormat = pkgs.formats.json {};
 
   chromeWebStoreUpdateUrl = "https://clients2.google.com/service/update2/crx";
 
-  extensionJson =
-    ext:
-    assert ext.crxPath != null -> ext.version != null;
-    {
+  extensionJson = ext:
+    assert ext.crxPath != null -> ext.version != null; {
       name = "Steam/config/htmlcache/External Extensions/${ext.id}.json";
       value.text = builtins.toJSON (
-        if ext.crxPath != null then
-          {
-            external_crx = ext.crxPath;
-            external_version = ext.version;
-          }
-        else
-          {
-            external_update_url = ext.updateUrl;
-          }
+        if ext.crxPath != null
+        then {
+          external_crx = ext.crxPath;
+          external_version = ext.version;
+        }
+        else {
+          external_update_url = ext.updateUrl;
+        }
       );
     };
 
@@ -35,11 +31,9 @@ let
       recursive = true;
     };
   };
-in
-{
+in {
   options.programs.steam = {
-    theme =
-      with lib;
+    theme = with lib;
       mkOption {
         type = types.nullOr types.package;
         default = null;
@@ -47,8 +41,7 @@ in
         example = pkgs.milleniumThemes.space;
       };
 
-    millenniumConfig =
-      with lib;
+    millenniumConfig = with lib;
       mkOption {
         type = types.submodule {
           freeformType = jsonFormat.type;
@@ -56,58 +49,55 @@ in
         description = "Configuration for Millennium";
       };
 
-    plugins =
-      with lib;
+    plugins = with lib;
       mkOption {
         type = types.listOf types.package;
-        default = [ ];
+        default = [];
         description = "Millennium Steam plugins.";
-        example = [ pkgs.millenniumPlugins.extendium ];
+        example = [pkgs.millenniumPlugins.extendium];
       };
 
-    extensions =
-      with lib;
+    extensions = with lib;
       mkOption {
-        type =
-          let
-            extensionType = types.submodule {
-              options = {
-                id = mkOption {
-                  type = types.strMatching "[a-zA-Z]{32}";
-                  description = ''
-                    The extension's ID from the Chrome Web Store url or the unpacked crx.
-                  '';
-                  default = "";
-                };
+        type = let
+          extensionType = types.submodule {
+            options = {
+              id = mkOption {
+                type = types.strMatching "[a-zA-Z]{32}";
+                description = ''
+                  The extension's ID from the Chrome Web Store url or the unpacked crx.
+                '';
+                default = "";
+              };
 
-                updateUrl = mkOption {
-                  type = types.str;
-                  default = chromeWebStoreUpdateUrl;
-                  description = ''
-                    URL of the extension's update manifest XML file.
-                  '';
-                };
+              updateUrl = mkOption {
+                type = types.str;
+                default = chromeWebStoreUpdateUrl;
+                description = ''
+                  URL of the extension's update manifest XML file.
+                '';
+              };
 
-                crxPath = mkOption {
-                  type = types.nullOr types.path;
-                  default = null;
-                  description = ''
-                    Path to the extension's crx file.
-                  '';
-                };
+              crxPath = mkOption {
+                type = types.nullOr types.path;
+                default = null;
+                description = ''
+                  Path to the extension's crx file.
+                '';
+              };
 
-                version = mkOption {
-                  type = types.nullOr types.str;
-                  default = null;
-                  description = ''
-                    The extension's version, required for local installation.
-                  '';
-                };
+              version = mkOption {
+                type = types.nullOr types.str;
+                default = null;
+                description = ''
+                  The extension's version, required for local installation.
+                '';
               };
             };
-          in
-          types.listOf (types.coercedTo types.str (v: { id = v; }) extensionType);
-        default = [ ];
+          };
+        in
+          types.listOf (types.coercedTo types.str (v: {id = v;}) extensionType);
+        default = [];
         example = literalExpression ''
           [
             { id = "cjpalhdlnbpafiamejdnhcphjbkeiagm"; } # ublock origin
@@ -158,8 +148,8 @@ in
       xdg.dataFile."Steam/millennium/themes/${cfg.theme.pname or "custom-theme"}".source = cfg.theme;
     })
 
-    (lib.mkIf (cfg.extensions != [ ]) {
-      programs.steam.plugins = [ pkgs.millenniumPlugins.extendium ];
+    (lib.mkIf (cfg.extensions != []) {
+      programs.steam.plugins = [pkgs.millenniumPlugins.extendium];
     })
 
     {
@@ -170,7 +160,7 @@ in
     }
 
     {
-      xdg.configFile."millennium/config.json" = lib.mkIf (cfg.millenniumConfig != { }) {
+      xdg.configFile."millennium/config.json" = lib.mkIf (cfg.millenniumConfig != {}) {
         source = jsonFormat.generate "config.json" cfg.millenniumConfig;
         force = true;
       };

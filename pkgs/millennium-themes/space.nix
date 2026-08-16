@@ -24,6 +24,6 @@ stdenvNoCC.mkDerivation {
     description = "Space theme for the Steam client";
     homepage = "https://github.com/SpaceTheme/Steam";
     license = lib.licenses.mit;
-    maintainers = with lib.maintainers; [ rein ];
+    maintainers = with lib.maintainers; [rein];
   };
 }

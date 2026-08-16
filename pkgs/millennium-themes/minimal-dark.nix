@@ -23,6 +23,6 @@ stdenvNoCC.mkDerivation (finalAttrs: {
   meta = {
     description = "Minimal Dark theme for the Steam client";
     homepage = "https://github.com/SaiyajinK/Minimal-Dark-for-Steam";
-    maintainers = with lib.maintainers; [ rein ];
+    maintainers = with lib.maintainers; [rein];
   };
 })

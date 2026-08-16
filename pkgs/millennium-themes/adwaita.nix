@@ -24,6 +24,6 @@ stdenvNoCC.mkDerivation (finalAttrs: {
     description = "Adwaita theme for the Steam client";
     homepage = "https://github.com/tkashkin/Adwaita-for-Steam";
     license = lib.licenses.mit;
-    maintainers = with lib.maintainers; [ rein ];
+    maintainers = with lib.maintainers; [rein];
   };
 })

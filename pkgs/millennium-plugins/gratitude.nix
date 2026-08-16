@@ -16,7 +16,7 @@ buildNpmPackage (finalAttrs: {
 
   npmDepsFetcherVersion = 2;
 
-  npmFlags = [ "--legacy-peer-deps" ];
+  npmFlags = ["--legacy-peer-deps"];
 
   npmDepsHash = "sha256-c3+pn2y4jWQ+mSxAtBXj3VVrLfHVoB15JX2L1rFM+II=";
 
@@ -38,7 +38,7 @@ buildNpmPackage (finalAttrs: {
     description = "A Millennium plugin for your Steam Library that adds a helpful indicator to games you have been gifted";
     homepage = "https://github.com/BlythT/Gratitude-Millennium-Plugin";
     license = lib.licenses.mit;
-    maintainers = with lib.maintainers; [ rein ];
-    platforms = [ "x86_64-linux" ];
+    maintainers = with lib.maintainers; [rein];
+    platforms = ["x86_64-linux"];
   };
 })
