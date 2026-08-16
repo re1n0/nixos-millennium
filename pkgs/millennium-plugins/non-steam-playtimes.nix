@@ -10,13 +10,13 @@
 stdenv.mkDerivation (finalAttrs: {
   pname = "non-steam-playtimes";
 
-  version = "2.0.2";
+  version = "2.0.3";
 
   src = fetchFromGitHub {
     owner = "k0d13";
     repo = "steam-non-steam-playtimes";
-    rev = "v2.0.2";
-    hash = "sha256-9cUoPaQvIF7/okMrlOvXVIiCzmnw59FPqEFvlLb8txc=";
+    rev = "v2.0.3";
+    hash = "sha256-xZHRBh2pv2AFKIpk5BN4lO0yxSTcsDfws0y8v9Lzze0=";
   };
 
   nativeBuildInputs = [
@@ -32,7 +32,7 @@ stdenv.mkDerivation (finalAttrs: {
       src
       ;
     fetcherVersion = 4;
-    hash = "sha256-TB1INBJhscsslY2A2xqjSQ+f/+CCm/sKb+dTwc2QVjc=";
+    hash = "sha256-Kx3ORmqrt0JxZ2WWhcglcQJKPU4sCPsQLoWb5gyJOuE=";
   };
 
   buildPhase = ''
