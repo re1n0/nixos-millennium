@@ -94,8 +94,12 @@ In order to use this, you need to include it in your flake's inputs like this:
   };
 
 
-  programs.steam.plugins = with pkgs.millenniumPlugins; [ extendium ];
+  programs.steam.plugins = with pkgs.millenniumPlugins; [ browser-history ];
 
+  programs.steam.extensions = [
+    { id = "cjpalhdlnbpafiamejdnhcphjbkeiagm"; } # ublock origin
+    { id = "kdbmhfkmnlmbkgbabkdealhhbfhlmmon"; } # steamdb
+  ];
   # ...
 }
 ```

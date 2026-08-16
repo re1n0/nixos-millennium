@@ -26,8 +26,6 @@ stdenv.mkDerivation {
   pname = "extendium";
   inherit version src;
 
-  patches = [ ./0001-extendium.patch ];
-
   nativeBuildInputs = [
     bun
     nodejs

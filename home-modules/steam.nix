@@ -9,6 +9,32 @@ let
   jsonFormat = pkgs.formats.json { };
 
   chromeWebStoreUpdateUrl = "https://clients2.google.com/service/update2/crx";
+
+  extensionJson =
+    ext:
+    assert ext.crxPath != null -> ext.version != null;
+    {
+      name = "Steam/config/htmlcache/External Extensions/${ext.id}.json";
+      value.text = builtins.toJSON (
+        if ext.crxPath != null then
+          {
+            external_crx = ext.crxPath;
+            external_version = ext.version;
+          }
+        else
+          {
+            external_update_url = ext.updateUrl;
+          }
+      );
+    };
+
+  pluginEntry = pkg: {
+    name = "millennium/plugins/${pkg.pname or pkg.name}";
+    value = {
+      source = pkg;
+      recursive = true;
+    };
+  };
 in
 {
   options.programs.steam = {
@@ -128,42 +154,18 @@ in
       ];
     }
 
-    (lib.mkIf (cfg.extensions != [ ]) {
-      programs.steam.plugins = [ pkgs.millenniumPlugins.extendium ];
-
-      xdg.configFile."millennium/extendium-extensions.json".text = builtins.toJSON (
-        map (
-          ext:
-          assert ext.crxPath != null -> ext.version != null;
-          if ext.crxPath != null then
-            {
-              inherit (ext) id;
-              external_crx = ext.crxPath;
-              external_version = ext.version;
-            }
-          else
-            {
-              inherit (ext) id;
-              external_update_url = ext.updateUrl;
-            }
-        ) cfg.extensions
-      );
+    (lib.mkIf (cfg.theme != null) {
+      xdg.dataFile."Steam/millennium/themes/${cfg.theme.pname or "custom-theme"}".source = cfg.theme;
     })
 
-    (lib.mkIf (cfg.theme != null) {
-      home.file.".local/share/Steam/millennium/themes/${cfg.theme.pname or "custom-theme"}".source =
-        cfg.theme;
+    (lib.mkIf (cfg.extensions != [ ]) {
+      programs.steam.plugins = [ pkgs.millenniumPlugins.extendium ];
     })
 
     {
-      home.file = builtins.listToAttrs (
-        map (pkg: {
-          name = ".local/share/millennium/plugins/${pkg.pname or pkg.name}";
-          value = {
-            source = pkg;
-            recursive = true;
-          };
-        }) (lib.lists.unique cfg.plugins)
+      xdg.dataFile = builtins.listToAttrs (
+        (map pluginEntry (lib.lists.unique cfg.plugins))
+        ++ (map extensionJson (lib.lists.unique cfg.extensions))
       );
     }
 
