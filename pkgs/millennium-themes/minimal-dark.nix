@@ -5,13 +5,13 @@
 }:
 stdenvNoCC.mkDerivation (finalAttrs: {
   pname = "minimal-dark-for-steam";
-  version = "6.0.6";
+  version = "6.0.7";
 
   src = fetchFromGitHub {
     owner = "SaiyajinK";
     repo = "Minimal-Dark-for-Steam";
     rev = finalAttrs.version;
-    hash = "sha256-U2QTmlLTpnde/tCb1Dwyq5lEmngkCGG15Up6AYF3gqo=";
+    hash = "sha256-9f7FVnU6Na7aoDym6HigQW6fwANKqAomBqwbiJ+r8Yc=";
   };
 
   installPhase = ''
