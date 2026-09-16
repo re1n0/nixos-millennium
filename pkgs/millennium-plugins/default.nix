@@ -33,4 +33,5 @@ in {
   # gratitude = callPackage ./gratitude.nix { };
   # hltb = callPackage ./hltb.nix { inherit fetchBunDeps; };
   non-steam-playtimes = callPackage ./non-steam-playtimes.nix {};
+  protondb = callPackage ./protondb.nix {};
 }
