@@ -24,6 +24,11 @@
       );
     };
 
+  pluginId = pkg:
+    if pkg ? starFile
+    then lib.strings.removeSuffix ".star" pkg.starFile
+    else pkg.pname or pkg.name;
+
   pluginEntry = pkg:
     if pkg ? starFile
     then {
@@ -143,7 +148,7 @@ in {
             showUpdateNotifications = false;
           };
 
-          plugins.enabledPlugins = lib.lists.uniqueStrings (map (pkg: pkg.pname) cfg.plugins);
+          plugins.enabledPlugins = lib.lists.uniqueStrings (map pluginId cfg.plugins);
         }
 
         (lib.mkIf (cfg.theme != null) {
