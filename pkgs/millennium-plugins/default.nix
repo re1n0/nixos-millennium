@@ -34,4 +34,5 @@ in {
   # hltb = callPackage ./hltb.nix { inherit fetchBunDeps; };
   non-steam-playtimes = callPackage ./non-steam-playtimes.nix {};
   protondb = callPackage ./protondb.nix {};
+  size-on-disk = callPackage ./size-on-disk.nix {};
 }
