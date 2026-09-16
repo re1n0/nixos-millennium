@@ -59,6 +59,12 @@ jobs:
       - name: Update non-steam-playtimes
         run: nix run 'nixpkgs#nix-update' -- --flake --commit 'non-steam-playtimes'
 
+      - name: Update protondb
+        run: nix run 'nixpkgs#nix-update' -- --flake --commit 'protondb'
+
+      - name: Update size-on-disk
+        run: nix run 'nixpkgs#nix-update' -- --flake --commit 'size-on-disk'
+
       - name: Push changes
         run: git push origin master
 
