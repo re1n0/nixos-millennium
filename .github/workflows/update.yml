@@ -65,6 +65,9 @@ jobs:
       - name: Update size-on-disk
         run: nix run 'nixpkgs#nix-update' -- --flake --commit 'size-on-disk'
 
+      - name: Update steam-native-notify
+        run: nix run 'nixpkgs#nix-update' -- --flake --commit --custom-dep node_modules --version=branch 'steam-native-notifications'
+
       - name: Push changes
         run: git push origin master
 

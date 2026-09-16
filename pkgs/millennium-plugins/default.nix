@@ -15,7 +15,7 @@
       nativeBuildInputs = [bun];
       buildPhase = ''
         export HOME=$TMPDIR
-        bun install --frozen-lockfile
+        bun install --frozen-lockfile --ignore-scripts
       '';
       installPhase = ''
         mkdir -p $out
@@ -35,4 +35,5 @@ in {
   non-steam-playtimes = callPackage ./non-steam-playtimes.nix {};
   protondb = callPackage ./protondb.nix {};
   size-on-disk = callPackage ./size-on-disk.nix {};
+  steam-native-notifications = callPackage ./steam-native-notifications.nix {inherit fetchBunDeps;};
 }
