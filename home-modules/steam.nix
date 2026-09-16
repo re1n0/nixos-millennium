@@ -24,13 +24,21 @@
       );
     };
 
-  pluginEntry = pkg: {
-    name = "millennium/plugins/${pkg.pname or pkg.name}";
-    value = {
-      source = pkg;
-      recursive = true;
+  pluginEntry = pkg:
+    if pkg ? starFile
+    then {
+      name = "millennium/plugins/${pkg.starFile}";
+      value = {
+        source = "${pkg}/${pkg.starFile}";
+      };
+    }
+    else {
+      name = "millennium/plugins/${pkg.pname or pkg.name}";
+      value = {
+        source = pkg;
+        recursive = true;
+      };
     };
-  };
 in {
   options.programs.steam = {
     theme = with lib;
