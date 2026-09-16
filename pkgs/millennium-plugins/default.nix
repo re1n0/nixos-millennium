@@ -30,6 +30,8 @@
 in {
   browser-history = callPackage ./browser-history.nix {inherit fetchBunDeps;};
   extendium = callPackage ./extendium.nix {inherit fetchBunDeps;};
+  collections-plus = callPackage ./collections-plus.nix {inherit fetchBunDeps;};
+  easygrid = callPackage ./easy-steamgrid.nix {inherit fetchBunDeps;};
   # gratitude = callPackage ./gratitude.nix { };
   # hltb = callPackage ./hltb.nix { inherit fetchBunDeps; };
   non-steam-playtimes = callPackage ./non-steam-playtimes.nix {};
