@@ -62,6 +62,9 @@ jobs:
       - name: Update protondb
         run: nix run 'nixpkgs#nix-update' -- --flake --commit 'protondb'
 
+      - name: Update protondb-status
+        run: nix run 'nixpkgs#nix-update' -- --flake --commit --version=branch 'protondb-status'
+
       - name: Update size-on-disk
         run: nix run 'nixpkgs#nix-update' -- --flake --commit 'size-on-disk'
 
