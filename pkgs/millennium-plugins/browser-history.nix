@@ -5,30 +5,34 @@
   bun,
   nodejs,
   fetchFromGitHub,
+  autoPatchelfHook,
 }: let
-  version = "0-unstable-2026-07-08";
+  version = "0-unstable-2026-09-29";
 
   src = fetchFromGitHub {
     owner = "ricewind012";
     repo = "steam-browser-history";
-    rev = "e31967d7c8462e81af68c414b038a0ce0a3c7e58";
-    hash = "sha256-GfYApyLvdcvdTNdrwuMWofdoWIfuDOnJvvVHeaEOhus=";
+    rev = "ae778d40aa02424418688c859fe2a3cf6b32f1d8";
+    hash = "sha256-jZAOiF50rW6ZdF/MWFMCSONeJNB3lTbsPw3ABV403lk=";
   };
 
   node_modules = fetchBunDeps {
     pname = "browser_history-bun-deps";
     inherit version src;
-    hash = "sha256-r+2gbkZrp9S0KqCmSdqkRfTFUiOfQOV6fSvxAcWoX1I=";
+    hash = "sha256-bovR/9UJrKM97WmQJgvdeHYdOv63e9yTR5wN91QSXv0=";
   };
 in
-  stdenv.mkDerivation {
+  stdenv.mkDerivation (finalAttrs: {
     pname = "browser_history";
     inherit version src;
 
     nativeBuildInputs = [
       bun
       nodejs
+      autoPatchelfHook
     ];
+
+    buildInputs = [stdenv.cc.cc.lib];
 
     buildPhase = ''
       runHook preBuild
@@ -41,8 +45,11 @@ in
       cp -r ${node_modules}/node_modules .
       chmod -R u+w node_modules
       patchShebangs node_modules
+      autoPatchelf node_modules
 
       export HOME=$TMPDIR
+      export XDG_DATA_HOME=$TMPDIR/xdg-data
+      bun run starlight lsp
       bun run build
 
       runHook postBuild
@@ -51,16 +58,15 @@ in
     installPhase = ''
       runHook preInstall
 
-      mkdir -p $out/.millennium/
+      mkdir -p $out
 
-      cp -r .millennium/Dist $out/.millennium
-      cp plugin.json $out
-      cp README.md $out
+      cp $XDG_DATA_HOME/millennium/plugins/${finalAttrs.passthru.starFile} $out
 
       runHook postInstall
     '';
 
     passthru.node_modules = node_modules;
+    passthru.starFile = "steam-browser-history.star";
 
     meta = {
       description = "A Millennium plugin to see your browser history on URL bar click";
@@ -68,4 +74,4 @@ in
       maintainers = with lib.maintainers; [rein];
       platforms = ["x86_64-linux"];
     };
-  }
+  })

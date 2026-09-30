@@ -26,7 +26,11 @@ in
     pname = "steam-native-notifications";
     inherit version src;
 
-    nativeBuildInputs = [bun nodejs autoPatchelfHook];
+    nativeBuildInputs = [
+      bun
+      nodejs
+      autoPatchelfHook
+    ];
 
     buildInputs = [stdenv.cc.cc.lib];
 
