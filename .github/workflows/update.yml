@@ -47,6 +47,9 @@ jobs:
       # - name: Update gratitude
       #   run: nix run 'nixpkgs#nix-update' -- --flake --commit 'gratitude'
 
+      - name: Update achievement-groups
+        run: nix run 'nixpkgs#nix-update' -- --flake --commit --custom-dep node_modules 'achievement-groups'
+
       - name: Update browser-history
         run: nix run 'nixpkgs#nix-update' -- --flake --commit --custom-dep node_modules --version=branch 'browser-history'
 

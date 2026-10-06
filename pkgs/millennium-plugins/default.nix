@@ -28,6 +28,7 @@
       outputHashMode = "recursive";
     };
 in {
+  achievement-groups = callPackage ./achievement-groups.nix {inherit fetchBunDeps;};
   browser-history = callPackage ./browser-history.nix {inherit fetchBunDeps;};
   completion-companion = callPackage ./completion-companion.nix {};
   extendium = callPackage ./extendium.nix {inherit fetchBunDeps;};
