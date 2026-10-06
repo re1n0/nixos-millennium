@@ -74,6 +74,9 @@ jobs:
       - name: Update protondb-status
         run: nix run 'nixpkgs#nix-update' -- --flake --commit --version=branch 'protondb-status'
 
+      - name: Update recent-chats
+        run: nix run 'nixpkgs#nix-update' -- --flake --commit --custom-dep node_modules 'recent-chats'
+
       - name: Update size-on-disk
         run: nix run 'nixpkgs#nix-update' -- --flake --commit 'size-on-disk'
 

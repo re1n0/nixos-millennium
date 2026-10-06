@@ -38,6 +38,7 @@ in {
   proton-universal-prefix = callPackage ./proton-universal-prefix.nix {};
   protondb = callPackage ./protondb.nix {};
   protondb-status = callPackage ./protondb-status.nix {};
+  recent-chats = callPackage ./recent-chats.nix {inherit fetchBunDeps;};
   size-on-disk = callPackage ./size-on-disk.nix {};
   steam-native-notifications = callPackage ./steam-native-notifications.nix {inherit fetchBunDeps;};
 }
