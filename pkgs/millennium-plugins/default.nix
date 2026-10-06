@@ -33,6 +33,7 @@ in {
   # gratitude = callPackage ./gratitude.nix { };
   # hltb = callPackage ./hltb.nix { inherit fetchBunDeps; };
   non-steam-playtimes = callPackage ./non-steam-playtimes.nix {};
+  proton-universal-prefix = callPackage ./proton-universal-prefix.nix {};
   protondb = callPackage ./protondb.nix {};
   protondb-status = callPackage ./protondb-status.nix {};
   size-on-disk = callPackage ./size-on-disk.nix {};

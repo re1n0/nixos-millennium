@@ -59,6 +59,9 @@ jobs:
       - name: Update non-steam-playtimes
         run: nix run 'nixpkgs#nix-update' -- --flake --commit 'non-steam-playtimes'
 
+      - name: Update proton-universal-prefix
+        run: nix run 'nixpkgs#nix-update' -- --flake --commit 'proton-universal-prefix'
+
       - name: Update protondb
         run: nix run 'nixpkgs#nix-update' -- --flake --commit 'protondb'
 
