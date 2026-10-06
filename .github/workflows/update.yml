@@ -50,6 +50,9 @@ jobs:
       - name: Update browser-history
         run: nix run 'nixpkgs#nix-update' -- --flake --commit --custom-dep node_modules --version=branch 'browser-history'
 
+      - name: Update completion-companion
+        run: nix run 'nixpkgs#nix-update' -- --flake --commit 'completion-companion'
+
       # - name: Update hltb
       #   run: nix run 'nixpkgs#nix-update' -- --flake --use-update-script 'hltb'
 

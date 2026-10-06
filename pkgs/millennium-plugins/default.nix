@@ -29,6 +29,7 @@
     };
 in {
   browser-history = callPackage ./browser-history.nix {inherit fetchBunDeps;};
+  completion-companion = callPackage ./completion-companion.nix {};
   extendium = callPackage ./extendium.nix {inherit fetchBunDeps;};
   # gratitude = callPackage ./gratitude.nix { };
   # hltb = callPackage ./hltb.nix { inherit fetchBunDeps; };
