@@ -10,8 +10,8 @@ stdenvNoCC.mkDerivation {
   src = fetchFromGitHub {
     owner = "SpaceTheme";
     repo = "Steam";
-    rev = "6b9266222749c487be8a5783b40a2a426f71fd18";
-    hash = "sha256-Stk/NVi06HjgjKQoc2GXJeF02rs4ElIaPKq/lhpbAmg=";
+    rev = "ac7c64e72b2317356f4d52d23c142d7c759a9778";
+    hash = "sha256-PUdXki+BxamO+B5L29IiT4VhkZf32zCIOYAixOlbquM=";
   };
 
   installPhase = ''
