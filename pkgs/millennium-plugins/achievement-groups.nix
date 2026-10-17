@@ -6,19 +6,19 @@
   nodejs,
   fetchFromGitHub,
 }: let
-  version = "2.1.0";
+  version = "2.1.1";
 
   src = fetchFromGitHub {
     owner = "BossSloth";
     repo = "SteamHunter-plugin";
     rev = "v${version}";
-    hash = "sha256-Cg1IIWSm4GW8YETn6YtNJ9tvV4W4hlH1sjw0QdeZ/h0=";
+    hash = "sha256-45P4En9PAxeJ9RGWlljuPvzPIjvYg8aOnIcXjs0PM/s=";
   };
 
   node_modules = fetchBunDeps {
     pname = "achievement-groups-bun-deps";
     inherit version src;
-    hash = "sha256-H+XzbSy//dlSeB7Pke4Zr7kyiNUFgSHMCPVlkFwAQJw=";
+    hash = "sha256-oPEYcIjFIQgu3IB7Jol/Zbr0vc9i6WgrzJukGhEalIY=";
   };
 in
   stdenv.mkDerivation {
