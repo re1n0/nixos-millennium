@@ -7,19 +7,19 @@
   fetchFromGitHub,
   autoPatchelfHook,
 }: let
-  version = "latest-unstable-2026-09-11";
+  version = "latest-unstable-2026-10-18";
 
   src = fetchFromGitHub {
     owner = "tyvsmith";
     repo = "steam-native-notifications";
-    rev = "1ad10344ff163521b2190107fdda0c9199f2ffd1";
-    hash = "sha256-Tl4WdROZrYzISA39kvbkNEOdtsLjTRGGF1NjdYxQAZ8=";
+    rev = "6f36038a1e24d8c6c940fe7fa2872f99f8b3f2f8";
+    hash = "sha256-HPTxhBCuUrOHxjJP721gT+jIcqlhhMyMoxo0BRoOuQQ=";
   };
 
   node_modules = fetchBunDeps {
     pname = "steam-native-notifications-bun-deps";
     inherit version src;
-    hash = "sha256-HRNWqg47uLyLPBTVQxe1F3dgwq7e45iKXPrbfxLDd/Q=";
+    hash = "sha256-n2W6K8tqUPoJ+2yA/QrVVOtR1VoNrAbSnNCJHVMpWPU=";
   };
 in
   stdenv.mkDerivation (finalAttrs: {
