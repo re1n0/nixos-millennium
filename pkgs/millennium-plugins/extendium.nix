@@ -6,19 +6,19 @@
   nodejs,
   fetchFromGitHub,
 }: let
-  version = "2.0.4";
+  version = "2.0.5";
 
   src = fetchFromGitHub {
     owner = "BossSloth";
     repo = "Extendium";
     rev = "v${version}";
-    hash = "sha256-WoQf/GJnrcKkTeyga2PqzvaiaLgsYpdFbdEj+CaEqXo=";
+    hash = "sha256-yFsIKMeqZpHVNTkUFpib13fVB+J7KakiMIkRZXxr3Ko=";
   };
 
   node_modules = fetchBunDeps {
     pname = "extendium-bun-deps";
     inherit version src;
-    hash = "sha256-aByhqc5tBKa//j8L0xSHAicLl6u3C+zPb7eijNvwKns=";
+    hash = "sha256-5P4SUHJJECbmbD/kj+63HSUzruJ70xjjbwToXOGLgyE=";
   };
 in
   stdenv.mkDerivation {
