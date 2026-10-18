@@ -10,13 +10,13 @@
 stdenv.mkDerivation (finalAttrs: {
   pname = "size-on-disk";
 
-  version = "1.2.0";
+  version = "1.2.1";
 
   src = fetchFromGitHub {
     owner = "k0d13";
     repo = "steam-size-on-disk";
     rev = "v${finalAttrs.version}";
-    hash = "sha256-z4hV52GzxmQC6hOdYVifycmyXgD/V/7O4U9hOOietyM=";
+    hash = "sha256-cPZx/PLqdcF+ahxzNPk8V8GcwA8qJq4iot3Bb31+yYg=";
   };
 
   nativeBuildInputs = [
@@ -33,7 +33,7 @@ stdenv.mkDerivation (finalAttrs: {
       src
       ;
     fetcherVersion = 4;
-    hash = "sha256-FTOXoSg6NOhbHp4r2glGoPJ9mLTp2sKcsfHl+avl9Q8=";
+    hash = "sha256-vJTNMUxi8WYZGOWNw4LQcj38kDxCgRO0LSOSVlMYSTE=";
   };
 
   buildPhase = ''
