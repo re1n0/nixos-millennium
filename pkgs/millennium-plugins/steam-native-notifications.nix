@@ -12,8 +12,8 @@
   src = fetchFromGitHub {
     owner = "tyvsmith";
     repo = "steam-native-notifications";
-    rev = "6f36038a1e24d8c6c940fe7fa2872f99f8b3f2f8";
-    hash = "sha256-HPTxhBCuUrOHxjJP721gT+jIcqlhhMyMoxo0BRoOuQQ=";
+    rev = "91bd5048d1509dfe092b085e62abffb93b529d38";
+    hash = "sha256-axs9kV10WdNpXo2QJSkehg00xG70z/5D1zUx1aUFGxM=";
   };
 
   node_modules = fetchBunDeps {
