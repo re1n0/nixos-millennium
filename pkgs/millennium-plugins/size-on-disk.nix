@@ -6,24 +6,28 @@
   fetchPnpmDeps,
   nodejs,
   fetchFromGitHub,
+  autoPatchelfHook,
 }:
 stdenv.mkDerivation (finalAttrs: {
   pname = "size-on-disk";
 
-  version = "1.2.1";
+  version = "1.3.0";
 
   src = fetchFromGitHub {
     owner = "k0d13";
     repo = "steam-size-on-disk";
     rev = "v${finalAttrs.version}";
-    hash = "sha256-cPZx/PLqdcF+ahxzNPk8V8GcwA8qJq4iot3Bb31+yYg=";
+    hash = "sha256-5l08dXRIOENHEORJyyIIeQ0n/Hkbh2uChBWG2YaWvTE=";
   };
 
   nativeBuildInputs = [
     pnpm
     pnpmConfigHook
     nodejs
+    autoPatchelfHook
   ];
+
+  buildInputs = [stdenv.cc.cc.lib];
 
   pnpmDeps = fetchPnpmDeps {
     inherit
@@ -33,13 +37,16 @@ stdenv.mkDerivation (finalAttrs: {
       src
       ;
     fetcherVersion = 4;
-    hash = "sha256-vJTNMUxi8WYZGOWNw4LQcj38kDxCgRO0LSOSVlMYSTE=";
+    hash = "sha256-gJDFa4e7CQWBuc84nIGR0VoGFkoTcVPSj10lJfLgbzQ=";
   };
 
   buildPhase = ''
     runHook preBuild
 
-    pnpm build
+    patchShebangs node_modules
+    autoPatchelf node_modules
+
+    pnpm exec starlight pack --release -o .millennium
 
     runHook postBuild
   '';
@@ -47,16 +54,14 @@ stdenv.mkDerivation (finalAttrs: {
   installPhase = ''
     runHook preInstall
 
-    mkdir -p $out/.millennium/
+    mkdir -p $out
 
-    cp -r .millennium/Dist $out/.millennium
-    cp -r backend $out
-    cp plugin.json $out
-    cp README.md $out
-    cp CHANGELOG.md $out
+    cp .millennium/${finalAttrs.passthru.starFile} $out
 
     runHook postInstall
   '';
+
+  passthru.starFile = "${finalAttrs.pname}.star";
 
   meta = {
     description = "A Millennium plugin that allows you to instantly see the size of a game on disk";
