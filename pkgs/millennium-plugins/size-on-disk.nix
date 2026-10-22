@@ -11,13 +11,13 @@
 stdenv.mkDerivation (finalAttrs: {
   pname = "size-on-disk";
 
-  version = "1.3.0";
+  version = "1.3.1";
 
   src = fetchFromGitHub {
     owner = "k0d13";
     repo = "steam-size-on-disk";
     rev = "v${finalAttrs.version}";
-    hash = "sha256-5l08dXRIOENHEORJyyIIeQ0n/Hkbh2uChBWG2YaWvTE=";
+    hash = "sha256-zoQkL32Wu66298I3n1PaWcZKf67x3tMAZIBiAYeQGm0=";
   };
 
   nativeBuildInputs = [
