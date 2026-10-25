@@ -5,13 +5,13 @@
 }:
 stdenvNoCC.mkDerivation {
   pname = "space-theme-steam";
-  version = "20250912-unstable-2026-10-21";
+  version = "20250912-unstable-2026-10-24";
 
   src = fetchFromGitHub {
     owner = "SpaceTheme";
     repo = "Steam";
-    rev = "13305edb86e8fc38400ca6bb725cf35fc092cba5";
-    hash = "sha256-/FNP+fpQyGEeUHLEC8H+LvEdUggVVqHzinE7+Bu0VME=";
+    rev = "fc552516e920c6168d43d5adb5aaeffdb7574cbb";
+    hash = "sha256-9SpoHzlysXRi4UjynNO0sXNiGfhkxyFceTTLgNi2tGc=";
   };
 
   installPhase = ''
