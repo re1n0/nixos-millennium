@@ -7,13 +7,13 @@
   fetchFromGitHub,
   autoPatchelfHook,
 }: let
-  version = "latest-unstable-2026-10-25";
+  version = "latest-unstable-2026-10-27";
 
   src = fetchFromGitHub {
     owner = "tyvsmith";
     repo = "steam-native-notifications";
-    rev = "6b6d424afea6206524a2aaba0245551102dee960";
-    hash = "sha256-cj0nypmDiY5YDV9pXvwnceVKZfmzSclIuLp5iECejfA=";
+    rev = "118c0bfc6b958fcf0679864c593cdf01215a1e9a";
+    hash = "sha256-Bk9uWLJR61WYkvW2MIooUvCX+W1WB1yEIy86JAfVKuw=";
   };
 
   node_modules = fetchBunDeps {
