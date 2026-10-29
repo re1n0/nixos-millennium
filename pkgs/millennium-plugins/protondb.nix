@@ -10,13 +10,13 @@
 stdenv.mkDerivation (finalAttrs: {
   pname = "protondb";
 
-  version = "1.0.0";
+  version = "2.0.0";
 
   src = fetchFromGitHub {
     owner = "unicxrn";
     repo = "protondb-millennium";
     rev = "v${finalAttrs.version}";
-    hash = "sha256-IB3lvO8T4wrrGBnHm6/ZUAjFSDm8SVR+TuMhbOO5d+c=";
+    hash = "sha256-w5xP5adhKK15OXkGnSbHozA1m5ZobLA7qKSR5L8DdwE=";
   };
 
   nativeBuildInputs = [
@@ -33,7 +33,7 @@ stdenv.mkDerivation (finalAttrs: {
       src
       ;
     fetcherVersion = 4;
-    hash = "sha256-9Lg4NEOYKjk1cq64is5wWYLM8tDmU6mFcQHplOraF1E=";
+    hash = "sha256-3P8i75+Ni6cZIWrFOIMj9dYTOkjuhHOCCOe5cKks1RA=";
   };
 
   buildPhase = ''
