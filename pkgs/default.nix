@@ -5,24 +5,20 @@
 
   perSystem = {
     system,
-    pkgs,
+    final,
     config,
     ...
   }: let
-    millenniumThemes = pkgs.callPackage ./millennium-themes {};
-    millenniumPlugins = pkgs.callPackage ./millennium-plugins {};
+    millenniumThemes = final.callPackage ./millennium-themes {};
+    millenniumPlugins = final.callPackage ./millennium-plugins {};
 
     standalonePackages =
       {
-        close-steam-session = pkgs.callPackage ./close-steam-session {};
+        close-steam-session = final.callPackage ./close-steam-session {};
+        starlight = final.callPackage ./starlight {};
       }
       // (inputs.millennium.packages.${system} or {});
   in {
-    _module.args.pkgs = import inputs.nixpkgs {
-      inherit system;
-      config.allowUnfree = true;
-    };
-
     legacyPackages =
       standalonePackages
       // {

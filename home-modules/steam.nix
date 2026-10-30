@@ -25,16 +25,16 @@
     };
 
   pluginId = pkg:
-    if pkg ? starFile
-    then lib.strings.removeSuffix ".star" pkg.starFile
+    if pkg ? pluginId
+    then pkg.pluginId
     else pkg.pname or pkg.name;
 
   pluginEntry = pkg:
-    if pkg ? starFile
+    if pkg ? pluginId
     then {
-      name = "millennium/plugins/${pkg.starFile}";
+      name = "millennium/plugins/${pkg.pluginId}.star";
       value = {
-        source = "${pkg}/${pkg.starFile}";
+        source = "${pkg}/${pkg.pluginId}.star";
       };
     }
     else {
