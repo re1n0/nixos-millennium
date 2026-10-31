@@ -8,7 +8,7 @@
 }:
 rustPlatform.buildRustPackage (finalAttrs: {
   pname = "starlight";
-  version = "1.1.6";
+  version = "3.6.2";
   __structuredAttrs = true;
 
   src = fetchFromGitHub {
