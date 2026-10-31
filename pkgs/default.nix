@@ -5,6 +5,7 @@
 
   perSystem = {
     system,
+    pkgs,
     final,
     config,
     ...
@@ -14,11 +15,16 @@
 
     standalonePackages =
       {
-        close-steam-session = final.callPackage ./close-steam-session {};
-        starlight = final.callPackage ./starlight {};
+        close-steam-session = pkgs.callPackage ./close-steam-session {};
+        starlight = pkgs.callPackage ./starlight {};
       }
       // (inputs.millennium.packages.${system} or {});
   in {
+    _module.args.pkgs = import inputs.nixpkgs {
+      inherit system;
+      config.allowUnfree = true;
+    };
+    
     legacyPackages =
       standalonePackages
       // {
