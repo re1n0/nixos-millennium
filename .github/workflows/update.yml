@@ -26,6 +26,9 @@ jobs:
       - name: Update flake.lock
         run: nix flake update --commit-lock-file
 
+      - name: Update starlight
+        run: nix run 'nixpkgs#nix-update' -- --flake --commit 'starlight'
+
       - name: Update adwaita
         run: nix run 'nixpkgs#nix-update' -- --flake --commit 'adwaita'
 
