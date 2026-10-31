@@ -1,11 +1,10 @@
 {
   lib,
-  stdenv,
-  fetchBunDeps,
-  bun,
-  nodejs,
   fetchFromGitHub,
-  autoPatchelfHook,
+  starlight,
+  bun,
+  fetchBunDeps,
+  nodejs,
 }: let
   version = "latest-unstable-2026-10-30";
 
@@ -22,57 +21,32 @@
     hash = "sha256-n2W6K8tqUPoJ+2yA/QrVVOtR1VoNrAbSnNCJHVMpWPU=";
   };
 in
-  stdenv.mkDerivation (finalAttrs: {
+  starlight.buildStarlightPlugin {
     pname = "steam-native-notifications";
     inherit version src;
 
     nativeBuildInputs = [
       bun
       nodejs
-      autoPatchelfHook
     ];
-
-    buildInputs = [stdenv.cc.cc.lib];
 
     buildPhase = ''
       runHook preBuild
 
-      diff -q ./bun.lock ${node_modules}/bun.lock || {
-        echo "bun.lock mismatch"
-        exit 1
-      }
-
       cp -r ${node_modules}/node_modules .
-      chmod -R u+w node_modules
-      patchShebangs node_modules
-      autoPatchelf node_modules
 
-      export HOME=$TMPDIR
-      export XDG_DATA_HOME=$TMPDIR/xdg-data
-      bun run prepare
-      bun run build
+      mkdir build
+      starlight pack --release -o build
 
       runHook postBuild
     '';
 
-    installPhase = ''
-      runHook preInstall
-
-      mkdir -p $out
-
-      cp $XDG_DATA_HOME/millennium/plugins/${finalAttrs.passthru.starFile} $out
-
-      runHook postInstall
-    '';
-
     passthru.node_modules = node_modules;
-    passthru.starFile = "me.tysmith.steam-native-notifications.star";
 
     meta = {
       description = "Native notifications for Steam on Linux";
-      homepage = "https://github.com/tyvsmith/steam-native-notify";
+      homepage = "https://github.com/tyvsmith/steam-native-notifications";
       maintainers = with lib.maintainers; [rein];
       license = lib.licenses.mit;
-      platforms = ["x86_64-linux"];
     };
-  })
+  }
