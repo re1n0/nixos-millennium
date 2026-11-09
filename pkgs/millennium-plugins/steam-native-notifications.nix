@@ -6,13 +6,13 @@
   fetchBunDeps,
   nodejs,
 }: let
-  version = "latest-unstable-2026-10-30";
+  version = "latest-unstable-2026-11-09";
 
   src = fetchFromGitHub {
     owner = "tyvsmith";
     repo = "steam-native-notifications";
-    rev = "209a0b05752ccc4346ff1f4b23e558309739231b";
-    hash = "sha256-nRZ1y3SG2EJ4tPCiNYSapUZ82NhGD6q2WA6wR0VuSek=";
+    rev = "4d68447faca677cd6f0645133349963c07d047e7";
+    hash = "sha256-kTQItbV00kxDo6Ul02RDYjw+g1bxJf8bmJLMoQloVkQ=";
   };
 
   node_modules = fetchBunDeps {
