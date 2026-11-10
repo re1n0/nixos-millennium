@@ -10,13 +10,13 @@
 starlight.buildStarlightPlugin (finalAttrs: {
   pname = "size-on-disk";
 
-  version = "1.3.1";
+  version = "1.4.0";
 
   src = fetchFromGitHub {
     owner = "k0d13";
     repo = "steam-size-on-disk";
     rev = "v${finalAttrs.version}";
-    hash = "sha256-zoQkL32Wu66298I3n1PaWcZKf67x3tMAZIBiAYeQGm0=";
+    hash = "sha256-GZFhaT3h5BtZLuYcykETIF3ObYcWuFjvotK5KJyiXoQ=";
   };
 
   nativeBuildInputs = [
