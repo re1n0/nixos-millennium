@@ -7,11 +7,6 @@
     systems.url = "github:nix-systems/default";
 
     flake-parts.url = "github:hercules-ci/flake-parts";
-
-    millennium = {
-      url = "github:SteamClientHomebrew/Millennium/main?dir=packages/nix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
   };
 
   outputs = inputs:

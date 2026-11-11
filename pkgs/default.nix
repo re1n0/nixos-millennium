@@ -13,18 +13,16 @@
     millenniumThemes = final.callPackage ./millennium-themes {};
     millenniumPlugins = final.callPackage ./millennium-plugins {};
 
-    standalonePackages =
-      {
-        close-steam-session = pkgs.callPackage ./close-steam-session {};
-        starlight = pkgs.callPackage ./starlight {};
-      }
-      // (inputs.millennium.packages.${system} or {});
+    standalonePackages = {
+      close-steam-session = pkgs.callPackage ./close-steam-session {};
+      starlight = pkgs.callPackage ./starlight {};
+    };
   in {
     _module.args.pkgs = import inputs.nixpkgs {
       inherit system;
       config.allowUnfree = true;
     };
-    
+
     legacyPackages =
       standalonePackages
       // {

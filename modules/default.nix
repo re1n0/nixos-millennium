@@ -30,7 +30,7 @@
           "https://nixos-millennium.cachix.org"
         ];
 
-        programs.steam.package = lib.mkDefault pkgs.millennium-steam;
+        programs.steam.package = lib.mkDefault pkgs.steamWithMillennium;
       }
     ];
 }

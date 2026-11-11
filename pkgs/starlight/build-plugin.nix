@@ -30,7 +30,7 @@ lib.extendMkDerivation {
     buildPhase =
       args.buildPhase or ''
         runHook preBuild
-          
+        
         mkdir build
         starlight pack --release -o build
 
