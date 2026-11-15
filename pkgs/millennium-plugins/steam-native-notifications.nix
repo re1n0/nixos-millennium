@@ -6,19 +6,19 @@
   fetchBunDeps,
   nodejs,
 }: let
-  version = "latest-unstable-2026-11-09";
+  version = "latest-unstable-2026-11-14";
 
   src = fetchFromGitHub {
     owner = "tyvsmith";
     repo = "steam-native-notifications";
-    rev = "4d68447faca677cd6f0645133349963c07d047e7";
-    hash = "sha256-kTQItbV00kxDo6Ul02RDYjw+g1bxJf8bmJLMoQloVkQ=";
+    rev = "a7e0d74e7a989fac792e1fb5c3ad7a535face275";
+    hash = "sha256-TFnIRoLQb+aTKfd4aYDWS7f9yRTK5BHkzAE9TYo8v3s=";
   };
 
   node_modules = fetchBunDeps {
     pname = "steam-native-notifications-bun-deps";
     inherit version src;
-    hash = "sha256-n2W6K8tqUPoJ+2yA/QrVVOtR1VoNrAbSnNCJHVMpWPU=";
+    hash = "sha256-LoD+gXLuF4yj3CRcf+o/zFAbWhgx/6ydsfab9ecWFF8=";
   };
 in
   starlight.buildStarlightPlugin {
