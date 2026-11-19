@@ -27,100 +27,64 @@ jobs:
         run: nix flake update --commit-lock-file
 
       - name: Update starlight
-        run: |
-          nix flake prefetch
-          nix run 'nixpkgs#nix-update' -- --flake --commit 'starlight'
+        run: nix run 'nixpkgs#nix-update' -- --flake --commit 'starlight'
 
       - name: Update adwaita
-        run: |
-          nix flake prefetch
-          nix run 'nixpkgs#nix-update' -- --flake --commit 'adwaita'
+        run: nix run 'nixpkgs#nix-update' -- --flake --commit 'adwaita'
 
       - name: Update atoms
-        run: |
-          nix flake prefetch
-          nix run 'nixpkgs#nix-update' -- --flake --commit 'atoms'
+        run: nix run 'nixpkgs#nix-update' -- --flake --commit 'atoms'
 
       - name: Update minimal-dark
-        run: |
-          nix flake prefetch
-          nix run 'nixpkgs#nix-update' -- --flake --commit 'minimal-dark'
+        run: nix run 'nixpkgs#nix-update' -- --flake --commit 'minimal-dark'
 
       - name: Update material-theme
-        run: |
-          nix flake prefetch
-          nix run 'nixpkgs#nix-update' -- --flake --commit --version=branch 'material-theme'
+        run: nix run 'nixpkgs#nix-update' -- --flake --commit --version=branch 'material-theme'
 
       - name: Update metro
-        run: |
-          nix flake prefetch
-          nix run 'nixpkgs#nix-update' -- --flake --commit --version=branch 'metro'
+        run: nix run 'nixpkgs#nix-update' -- --flake --commit --version=branch 'metro'
 
       - name: Update space
-        run: |
-          nix flake prefetch
-          nix run 'nixpkgs#nix-update' -- --flake --commit --version=branch 'space'
+        run: nix run 'nixpkgs#nix-update' -- --flake --commit --version=branch 'space'
       
       # - name: Update gratitude
       #   run: nix run 'nixpkgs#nix-update' -- --flake --commit 'gratitude'
 
       - name: Update achievement-groups
-        run: |
-          nix flake prefetch
-          nix run 'nixpkgs#nix-update' -- --flake --commit --custom-dep node_modules 'achievement-groups'
+        run: nix run 'nixpkgs#nix-update' -- --flake --commit --custom-dep node_modules 'achievement-groups'
 
       - name: Update browser-history
-        run: |
-          nix flake prefetch
-          nix run 'nixpkgs#nix-update' -- --flake --commit --custom-dep node_modules --version=branch 'browser-history'
+        run: nix run 'nixpkgs#nix-update' -- --flake --commit --custom-dep node_modules --version=branch 'browser-history'
 
       - name: Update completion-companion
-        run: |
-          nix flake prefetch
-          nix run 'nixpkgs#nix-update' -- --flake --commit 'completion-companion'
+        run: nix run 'nixpkgs#nix-update' -- --flake --commit 'completion-companion'
 
       # - name: Update hltb
       #   run: nix run 'nixpkgs#nix-update' -- --flake --use-update-script 'hltb'
 
       - name: Update extendium
-        run: |
-          nix flake prefetch
-          nix run 'nixpkgs#nix-update' -- --flake --commit --custom-dep node_modules 'extendium'
+        run: nix run 'nixpkgs#nix-update' -- --flake --commit --custom-dep node_modules 'extendium'
       
       - name: Update non-steam-playtimes
-        run: |
-          nix flake prefetch
-          nix run 'nixpkgs#nix-update' -- --flake --commit 'non-steam-playtimes'
+        run: nix run 'nixpkgs#nix-update' -- --flake --commit 'non-steam-playtimes'
 
       - name: Update proton-universal-prefix
-        run: |
-          nix flake prefetch
-          nix run 'nixpkgs#nix-update' -- --flake --commit 'proton-universal-prefix'
+        run: nix run 'nixpkgs#nix-update' -- --flake --commit 'proton-universal-prefix'
 
       - name: Update protondb
-        run: |
-          nix flake prefetch
-          nix run 'nixpkgs#nix-update' -- --flake --commit 'protondb'
+        run: nix run 'nixpkgs#nix-update' -- --flake --commit 'protondb'
 
       - name: Update protondb-status
-        run: |
-          nix flake prefetch
-          nix run 'nixpkgs#nix-update' -- --flake --commit --version=branch 'protondb-status'
+        run: nix run 'nixpkgs#nix-update' -- --flake --commit --version=branch 'protondb-status'
 
       - name: Update recent-chats
-        run: |
-          nix flake prefetch
-          nix run 'nixpkgs#nix-update' -- --flake --commit --custom-dep node_modules 'recent-chats'
+        run: nix run 'nixpkgs#nix-update' -- --flake --commit --custom-dep node_modules 'recent-chats'
 
       - name: Update size-on-disk
-        run: |
-          nix flake prefetch
-          nix run 'nixpkgs#nix-update' -- --flake --commit 'size-on-disk'
+        run: nix run 'nixpkgs#nix-update' -- --flake --commit 'size-on-disk'
 
       - name: Update steam-native-notify
-        run: |
-          nix flake prefetch
-          nix run 'nixpkgs#nix-update' -- --flake --commit --custom-dep node_modules --version=branch 'steam-native-notifications'
+        run: nix run 'nixpkgs#nix-update' -- --flake --commit --custom-dep node_modules --version=branch 'steam-native-notifications'
 
       - name: Push changes
         run: git push origin master
