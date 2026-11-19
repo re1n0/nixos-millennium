@@ -5,7 +5,7 @@
 }:
 stdenvNoCC.mkDerivation (finalAttrs: {
   pname = "adwaita-for-steam";
-  version = "4.4";
+  version = "4.5";
 
   src = fetchFromGitHub {
     owner = "tkashkin";
