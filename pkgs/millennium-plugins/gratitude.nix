@@ -5,20 +5,16 @@
 }:
 buildNpmPackage (finalAttrs: {
   pname = "gratitude";
-  version = "1.3.0";
+  version = "1.4.1";
 
   src = fetchFromGitHub {
     owner = "BlythT";
     repo = "Gratitude-Millennium-Plugin";
     tag = "v${finalAttrs.version}";
-    hash = "sha256-jb8gn5QH5g/bG3PvIiu+n6IJr6niQRBcSj4v1/8X3Z8=";
+    hash = "sha256-XRM85NMauEK9HaUl+8xkzTKy6nZxAQPeNLTN1QEMyuk=";
   };
 
-  npmDepsFetcherVersion = 2;
-
-  npmFlags = ["--legacy-peer-deps"];
-
-  npmDepsHash = "sha256-c3+pn2y4jWQ+mSxAtBXj3VVrLfHVoB15JX2L1rFM+II=";
+  npmDepsHash = "sha256-MfFA/QtXakfkPNdHRI03Vp7QzC9QylZZPjYpxXbYAn8=";
 
   installPhase = ''
     runHook preInstall
@@ -39,6 +35,5 @@ buildNpmPackage (finalAttrs: {
     homepage = "https://github.com/BlythT/Gratitude-Millennium-Plugin";
     license = lib.licenses.mit;
     maintainers = with lib.maintainers; [rein];
-    platforms = ["x86_64-linux"];
   };
 })
