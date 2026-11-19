@@ -5,7 +5,7 @@
 }:
 stdenvNoCC.mkDerivation (finalAttrs: {
   pname = "minimal-dark-for-steam";
-  version = "6.6.2";
+  version = "6.6.5";
 
   src = fetchFromGitHub {
     owner = "SaiyajinK";
