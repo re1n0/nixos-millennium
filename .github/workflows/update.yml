@@ -68,6 +68,9 @@ jobs:
       - name: Update non-steam-playtimes
         run: nix run 'nixpkgs#nix-update' -- --flake --commit 'non-steam-playtimes'
 
+      - name: Update proton-prefix-browser
+        run: nix run 'nixpkgs#nix-update' -- --flake --commit --custom-dep node_modules 'proton-prefix-browser'
+
       - name: Update proton-universal-prefix
         run: nix run 'nixpkgs#nix-update' -- --flake --commit 'proton-universal-prefix'
 
@@ -86,7 +89,7 @@ jobs:
       - name: Update steam-native-notify
         run: nix run 'nixpkgs#nix-update' -- --flake --commit --custom-dep node_modules --version=branch 'steam-native-notifications'
 
-      - name: Update steam-native-notify
+      - name: Update steam-wrapped
         run: nix run 'nixpkgs#nix-update' -- --flake --commit 'steam-wrapped'
 
       - name: Push changes
