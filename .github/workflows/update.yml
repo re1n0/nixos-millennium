@@ -86,6 +86,9 @@ jobs:
       - name: Update steam-native-notify
         run: nix run 'nixpkgs#nix-update' -- --flake --commit --custom-dep node_modules --version=branch 'steam-native-notifications'
 
+      - name: Update steam-native-notify
+        run: nix run 'nixpkgs#nix-update' -- --flake --commit 'steam-wrapped'
+
       - name: Push changes
         run: git push origin master
 

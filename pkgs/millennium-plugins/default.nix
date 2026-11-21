@@ -41,4 +41,5 @@ in {
   recent-chats = callPackage ./recent-chats.nix {inherit fetchBunDeps;};
   size-on-disk = callPackage ./size-on-disk.nix {};
   steam-native-notifications = callPackage ./steam-native-notifications.nix {inherit fetchBunDeps;};
+  steam-wrapped = callPackage ./steam-wrapped.nix {};
 }
